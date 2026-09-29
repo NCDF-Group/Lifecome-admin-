@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 13, "column": 0}, "map": {"version":3,"sources":["file:///Users/samuel/Documents/Lifecome-admin-/src/app/icon.svg.mjs%20(structured%20image%20object)"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 173, height: 164 }\n"],"names":["src","width","height"],"mappings":";;;;AAAA;;uCACe;IAAEA,KAAAA,uIAAG;IAAEC,OAAO;IAAKC,QAAQ;AAAI"}},
+    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["file:///Users/samuel/Documents/Lifecome-admin-/src/app/page.tsx"],"sourcesContent":["import { redirect } from \"next/navigation\";\n\n/**\n * The bare domain root. `(console)/layout.tsx` itself checks the session and redirects an\n * unauthenticated visitor to `/login`, so this only needs to pick the default landing page.\n */\nexport default function RootPage() {\n  redirect(\"/dashboard\");\n}\n"],"names":["RootPage"],"mappings":";;;;AAAA;AAAA;;AAMe,SAASA;IACtB,IAAA,iMAAQ,EAAC;AACX"}}]
+}
