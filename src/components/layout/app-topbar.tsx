@@ -4,6 +4,7 @@ import { Bell, Menu } from "lucide-react";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { useSidebar } from "@/components/layout/sidebar-context";
 import { UserMenu } from "@/components/layout/user-menu";
+import { TourTrigger } from "@/components/tour/tour-trigger";
 import { staffRoleLabel, type StaffRole } from "@/lib/auth/roles";
 
 /**
@@ -34,6 +35,7 @@ export function AppTopbar({
           type="button"
           onClick={toggle}
           aria-label="Toggle sidebar"
+          data-tour="sidebar-toggle"
           className="hidden size-9 items-center justify-center rounded-control text-ink hover:bg-surface lg:flex"
         >
           <Menu className="size-5" />
@@ -44,12 +46,15 @@ export function AppTopbar({
       </div>
       <div className="flex items-center gap-3 text-sm text-ink-muted">
         {/* TODO: command palette trigger */}
-        <Bell className="size-4" />
+        <TourTrigger />
+        <Bell className="size-4" data-tour="notifications" />
         <span className="hidden sm:flex sm:flex-col sm:items-end sm:leading-tight">
           <span className="text-ink">{fullName}</span>
           <span className="text-xs">{staffRoleLabel[role]}</span>
         </span>
-        <UserMenu fullName={fullName} email={email} role={role} avatarUrl={avatarUrl} />
+        <span data-tour="user-menu">
+          <UserMenu fullName={fullName} email={email} role={role} avatarUrl={avatarUrl} />
+        </span>
       </div>
     </header>
   );

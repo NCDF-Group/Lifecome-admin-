@@ -6,6 +6,9 @@ type SidebarContextValue = {
   /** Whether the persistent (`lg`+) sidebar is expanded. */
   open: boolean;
   toggle: () => void;
+  /** Forces the sidebar open or closed - used by the navigation tour so a step's target is
+   * never hidden behind a collapsed sidebar. */
+  setOpen: (open: boolean) => void;
 };
 
 const SidebarContext = createContext<SidebarContextValue | null>(null);
@@ -18,7 +21,7 @@ const SidebarContext = createContext<SidebarContextValue | null>(null);
 export function SidebarProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(true);
   return (
-    <SidebarContext.Provider value={{ open, toggle: () => setOpen((v) => !v) }}>
+    <SidebarContext.Provider value={{ open, toggle: () => setOpen((v) => !v), setOpen }}>
       {children}
     </SidebarContext.Provider>
   );

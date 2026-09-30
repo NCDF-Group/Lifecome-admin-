@@ -19,6 +19,7 @@ export function AppSidebar() {
 
   return (
     <nav
+      data-tour="sidebar-nav"
       className={cn(
         "hidden shrink-0 overflow-hidden border-r border-line bg-card transition-[width] duration-200 lg:block",
         open ? "w-60" : "w-0",

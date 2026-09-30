@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import { cookies } from "next/headers";
 import { isThemePreference, THEME_COOKIE } from "@/lib/theme";
 import "./globals.css";
+
+// Same font as the LifeCome Live mobile app (see Lifecome-mobile's app_typography.dart) - one
+// look across every surface a staff member or patient touches.
+const interFont = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans-body",
+});
 
 export const metadata: Metadata = {
   title: "LifeCome Live - Operations console",
@@ -18,7 +26,7 @@ export default async function RootLayout({
 
   return (
     // The avatar menu changes `data-theme` on the client without a re-render of this element.
-    <html lang="en" data-theme={theme} suppressHydrationWarning>
+    <html lang="en" data-theme={theme} className={interFont.variable} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );
