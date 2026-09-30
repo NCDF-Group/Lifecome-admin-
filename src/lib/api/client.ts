@@ -27,7 +27,7 @@ export async function apiFetch<TResponse = unknown>(
 ): Promise<TResponse> {
   const { token, headers, ...rest } = init ?? {};
 
-  const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/api/v1${path}`, {
+  const response = await fetch(`${env.API_URL}/api/v1${path}`, {
     ...rest,
     headers: {
       "Content-Type": "application/json",

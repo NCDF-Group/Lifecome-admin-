@@ -23,7 +23,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     return NextResponse.json({ error: "Email and password are required." }, { status: 400 });
   }
 
-  const backendResponse = await fetch(`${env.NEXT_PUBLIC_API_URL}/api/v1/admin/auth/login`, {
+  const backendResponse = await fetch(`${env.API_URL}/api/v1/admin/auth/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),

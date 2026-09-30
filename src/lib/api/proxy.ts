@@ -19,7 +19,7 @@ export async function proxyToBackend(
 
   const body: unknown = method === "DELETE" ? undefined : await request.json().catch(() => null);
 
-  const backendResponse = await fetch(`${env.NEXT_PUBLIC_API_URL}/api/v1${path}`, {
+  const backendResponse = await fetch(`${env.API_URL}/api/v1${path}`, {
     method,
     headers: {
       ...(body === undefined ? {} : { "Content-Type": "application/json" }),

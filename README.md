@@ -59,7 +59,7 @@ You need Node.js 20+ and a running `Lifecome-backend` (see its README) - every p
 calls it directly, there's no offline/demo-data fallback anymore.
 
 ```bash
-cp .env.example .env.local   # point NEXT_PUBLIC_API_URL at your backend
+cp .env.example .env.local   # point API_URL at your backend
 npm install
 npm run dev                  # http://localhost:3000 by default
 ```
@@ -74,7 +74,7 @@ README) and sign in with those credentials at `/login`.
 | `npm run start` | Run the built app |
 | `npm run lint` | ESLint |
 | `npm run typecheck` | `tsc --noEmit` |
-| `npm run generate:api` | Regenerate `src/lib/api/generated/schema.d.ts` from the backend's live OpenAPI contract (`$NEXT_PUBLIC_API_URL/docs-json`) - not run yet; every feature's `types.ts` is hand-written against the backend's actual response shapes in the meantime |
+| `npm run generate:api` | Regenerate `src/lib/api/generated/schema.d.ts` from the backend's live OpenAPI contract (`$API_URL/docs-json`) - not run yet; every feature's `types.ts` is hand-written against the backend's actual response shapes in the meantime |
 
 ## Deploying
 
@@ -86,7 +86,7 @@ free for a project this size. There's no `vercel.json` in this repo because none
 2. Push this repo to GitHub/GitLab, then in Vercel: **Add New → Project**, import it. If this repo
    lives in the same monorepo as the other LifeCome Live apps, set **Root Directory** to
    `Lifecome-admin` so Vercel doesn't try to build the whole workspace.
-3. Set one environment variable: `NEXT_PUBLIC_API_URL` = your deployed backend's URL (the
+3. Set one environment variable: `API_URL` = your deployed backend's URL (the
    `.onrender.com` one, or wherever it ended up) - no trailing slash, no `/api/v1` suffix
    (`lib/api/client.ts` appends that itself).
 4. Deploy. Then go back to the backend's `CORS_ORIGIN` env var and add this app's `.vercel.app`
@@ -96,7 +96,7 @@ free for a project this size. There's no `vercel.json` in this repo because none
 5. Sign in at `/login` with the staff account you seeded on the backend
    (`npm run db:seed:staff`).
 
-Every environment variable this app reads is in `src/config/env.ts` - `NEXT_PUBLIC_API_URL` is the
+Every environment variable this app reads is in `src/config/env.ts` - `API_URL` is the
 only one that exists today.
 
 ## Talking to the backend

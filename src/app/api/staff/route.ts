@@ -15,7 +15,7 @@ export async function POST(request: Request): Promise<NextResponse> {
 
   const body: unknown = await request.json().catch(() => null);
 
-  const backendResponse = await fetch(`${env.NEXT_PUBLIC_API_URL}/api/v1/admin/staff`, {
+  const backendResponse = await fetch(`${env.API_URL}/api/v1/admin/staff`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

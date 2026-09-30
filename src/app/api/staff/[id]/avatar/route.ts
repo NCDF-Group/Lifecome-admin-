@@ -10,7 +10,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
 
   const { id } = await params;
   const backendResponse = await fetch(
-    `${env.NEXT_PUBLIC_API_URL}/api/v1/admin/staff/${encodeURIComponent(id)}/avatar`,
+    `${env.API_URL}/api/v1/admin/staff/${encodeURIComponent(id)}/avatar`,
     { headers: { Authorization: `Bearer ${session.token}` }, cache: "no-store" },
   );
   if (!backendResponse.ok) return new NextResponse(null, { status: backendResponse.status });

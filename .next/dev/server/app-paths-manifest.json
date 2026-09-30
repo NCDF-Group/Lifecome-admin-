@@ -1,18 +1,3 @@
 {
-  "/(auth)/login/page": "app/(auth)/login/page.js",
-  "/(console)/bookings/page": "app/(console)/bookings/page.js",
-  "/(console)/clinical-records/page": "app/(console)/clinical-records/page.js",
-  "/(console)/dashboard/page": "app/(console)/dashboard/page.js",
-  "/(console)/documents/page": "app/(console)/documents/page.js",
-  "/(console)/locations/page": "app/(console)/locations/page.js",
-  "/(console)/patients/page": "app/(console)/patients/page.js",
-  "/(console)/profile/page": "app/(console)/profile/page.js",
-  "/(console)/providers/page": "app/(console)/providers/page.js",
-  "/(console)/settings/page": "app/(console)/settings/page.js",
-  "/api/auth/login/route": "app/api/auth/login/route.js",
-  "/api/auth/logout/route": "app/api/auth/logout/route.js",
-  "/api/profile/avatar/route": "app/api/profile/avatar/route.js",
-  "/api/profile/password/route": "app/api/profile/password/route.js",
-  "/api/staff/[id]/avatar/route": "app/api/staff/[id]/avatar/route.js",
-  "/page": "app/page.js"
+  "/(console)/dashboard/page": "app/(console)/dashboard/page.js"
 }
