@@ -46,4 +46,13 @@ export const rolePermissions: Record<
       "No access to clinical records or payer eligibility data",
     ],
   },
+  clinician: {
+    label: "Clinician",
+    description: "A doctor. Works only in their own workspace, never the admin console.",
+    permissions: [
+      "See their own agenda and appointments, with patient intake",
+      "Manage their own availability",
+      "No access to other providers' bookings, payments or admin pages",
+    ],
+  },
 };

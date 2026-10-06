@@ -1,24 +1,12 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import type { Appointment, BookingStatus } from "@/features/bookings/types";
+import {
+  bookingStatusLabel,
+  bookingStatusTone,
+  consultationModeLabel,
+  fundingRouteLabel,
+} from "@/features/bookings/labels";
 import { StatusPill } from "@/components/shared/status-pill";
-
-const statusLabel: Record<BookingStatus, string> = {
-  slot_held: "Slot held",
-  confirmed: "Confirmed",
-  rescheduled: "Rescheduled",
-  cancelled: "Cancelled",
-  doctor_unavailable: "Doctor unavailable",
-  patient_no_show: "Patient no-show",
-};
-
-const statusTone: Record<BookingStatus, "success" | "warning" | "destructive" | "neutral"> = {
-  slot_held: "warning",
-  confirmed: "success",
-  rescheduled: "warning",
-  cancelled: "destructive",
-  doctor_unavailable: "destructive",
-  patient_no_show: "neutral",
-};
 
 export const bookingsColumns: ColumnDef<Appointment, unknown>[] = [
   {
@@ -28,6 +16,22 @@ export const bookingsColumns: ColumnDef<Appointment, unknown>[] = [
   },
   { accessorKey: "providerName", header: "Provider" },
   { accessorKey: "serviceName", header: "Service" },
+  {
+    accessorKey: "consultationMode",
+    header: "Mode",
+    cell: (info) => {
+      const row = info.row.original;
+      const mode = consultationModeLabel[row.consultationMode];
+      return row.consultationMode === "in_person" && row.locationCity
+        ? `${mode} - ${row.locationCity}`
+        : mode;
+    },
+  },
+  {
+    accessorKey: "fundingRoute",
+    header: "Funding",
+    cell: (info) => fundingRouteLabel[info.row.original.fundingRoute],
+  },
   {
     accessorKey: "createdAt",
     header: "Booked",
@@ -49,7 +53,7 @@ export const bookingsColumns: ColumnDef<Appointment, unknown>[] = [
     header: "Status",
     cell: (info) => {
       const status = info.getValue() as BookingStatus;
-      return <StatusPill tone={statusTone[status]} label={statusLabel[status]} />;
+      return <StatusPill tone={bookingStatusTone[status]} label={bookingStatusLabel[status]} />;
     },
   },
 ];

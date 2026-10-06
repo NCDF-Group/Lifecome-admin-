@@ -1,3 +1,4 @@
+import { RoleRouteGuard } from "@/components/auth/role-route-guard";
 import { AppSidebar } from "@/components/layout/app-sidebar";
 import { AppTopbar } from "@/components/layout/app-topbar";
 import { SidebarProvider } from "@/components/layout/sidebar-context";
@@ -15,7 +16,7 @@ export default async function ConsoleLayout({ children }: Readonly<{ children: R
     <SidebarProvider>
       <TourProvider>
         <div className="flex h-screen bg-background">
-          <AppSidebar />
+          <AppSidebar role={profile.role} />
           <div className="flex flex-1 flex-col overflow-hidden">
             <AppTopbar
               fullName={profile.fullName}
@@ -26,6 +27,7 @@ export default async function ConsoleLayout({ children }: Readonly<{ children: R
             <main className="flex-1 overflow-y-auto p-4 sm:p-6">{children}</main>
           </div>
         </div>
+        <RoleRouteGuard role={profile.role} />
         <NavTour />
       </TourProvider>
     </SidebarProvider>

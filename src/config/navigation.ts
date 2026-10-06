@@ -1,6 +1,7 @@
 import {
   Bell,
   Building2,
+  CalendarCheck,
   CalendarClock,
   CalendarDays,
   ClipboardCheck,
@@ -22,6 +23,7 @@ import {
   Video,
   type LucideIcon,
 } from "lucide-react";
+import type { StaffRole } from "@/lib/auth/roles";
 
 /**
  * The console's sidebar, one entry per section. `href` matches the route
@@ -40,9 +42,24 @@ export type NavItem = {
 export type NavSection = {
   title: string;
   items: NavItem[];
+  /** Shown only to these roles. Omit for "every role except clinicians". */
+  roles?: StaffRole[];
 };
 
 export const navigation: NavSection[] = [
+  {
+    title: "My workspace",
+    roles: ["clinician"],
+    items: [
+      { label: "Agenda", href: "/workspace", backendModule: "clinician", icon: CalendarCheck },
+      {
+        label: "Availability",
+        href: "/workspace/availability",
+        backendModule: "clinician",
+        icon: CalendarClock,
+      },
+    ],
+  },
   {
     title: "Overview",
     items: [
@@ -200,3 +217,16 @@ export const navigation: NavSection[] = [
     ],
   },
 ];
+
+/** The sections a signed-in staff member should see. Clinicians get only their own workspace;
+ * everyone else gets the admin console (the backend enforces the same split - see RolesGuard). */
+export function navigationFor(role: StaffRole): NavSection[] {
+  return navigation.filter((section) =>
+    section.roles ? section.roles.includes(role) : role !== "clinician",
+  );
+}
+
+/** Where a role lands after signing in. */
+export function homeFor(role: StaffRole): string {
+  return role === "clinician" ? "/workspace" : "/dashboard";
+}

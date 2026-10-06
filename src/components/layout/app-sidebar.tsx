@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { BrandLogo } from "@/components/shared/brand-logo";
-import { navigation } from "@/config/navigation";
+import { homeFor, navigationFor } from "@/config/navigation";
+import type { StaffRole } from "@/lib/auth/roles";
 import { useSidebar } from "@/components/layout/sidebar-context";
 import { cn } from "@/lib/utils";
 
@@ -14,7 +15,7 @@ import { cn } from "@/lib/utils";
  * breakpoint (`MobileNav` covers that instead); at `lg`+, its width
  * collapses/expands with `AppTopbar`'s hamburger via `useSidebar`.
  */
-export function AppSidebar() {
+export function AppSidebar({ role }: { role: StaffRole }) {
   const { open } = useSidebar();
 
   return (
@@ -26,10 +27,10 @@ export function AppSidebar() {
       )}
     >
       <div className="flex h-full w-60 flex-col gap-6 overflow-y-auto p-4">
-        <Link href="/dashboard" className="flex items-center gap-2 px-2 py-1">
+        <Link href={homeFor(role)} className="flex items-center gap-2 px-2 py-1">
           <BrandLogo priority />
         </Link>
-        {navigation.map((section) => (
+        {navigationFor(role).map((section) => (
           <div key={section.title} className="flex flex-col gap-1">
             <span className="px-2 text-xs font-semibold uppercase tracking-wide text-ink-muted">
               {section.title}

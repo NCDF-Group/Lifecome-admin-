@@ -3,9 +3,8 @@
 The internal admin app for [LifeCome Live](../README.md) staff: the blueprint's "operations
 console" (§1.1) - admin, payer ops, support, audit and content tooling over
 [`Lifecome-backend`](../Lifecome-backend)'s API. It is not patient-facing (that's
-[`Lifecome-web`](../Lifecome-web) and [`Lifecome-mobile`](../Lifecome-mobile)) and it is not the
-clinician-facing **provider workspace** the blueprint describes separately (§1.1) - that's a
-different app, for doctors and care coordinators, not built here.
+[`Lifecome-web`](../Lifecome-web) and [`Lifecome-mobile`](../Lifecome-mobile)) and the doctors' side is the
+role-gated **My workspace** section here, not a separate app (see "Who this is for").
 
 ## Status
 
@@ -34,8 +33,12 @@ The blueprint's operations personas (§2.3) - this console is where they work:
 | Support agent | Account and booking support, with restricted clinical-data access |
 | (Audit) | Everyone above is themselves audited - see the Audit log section |
 
-Doctors and care coordinators are **not** users of this app - they get the separate provider
-workspace the blueprint describes, not yet built.
+**Doctors** sign in here too, with the `clinician` role, but see only their own **My workspace**
+(`/workspace`: agenda, each appointment with the patient's "Prepare for ..." intake, and their own
+availability). The sidebar, the `src/proxy.ts` redirects and - the part that actually enforces it -
+the backend's `RolesGuard` keep a clinician out of every admin page and endpoint. A clinician login
+is linked to a provider profile when a platform administrator creates it (Staff accounts -> Invite
+staff member -> Clinician). Care coordinators are still not users of this app.
 
 ## Stack
 

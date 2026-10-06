@@ -5,11 +5,12 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { BrandLogo } from "@/components/shared/brand-logo";
 import { useState } from "react";
-import { navigation } from "@/config/navigation";
+import { homeFor, navigationFor } from "@/config/navigation";
+import type { StaffRole } from "@/lib/auth/roles";
 
 /** The drawer version of `AppSidebar`, shown below the `lg` breakpoint
  * where the persistent sidebar is hidden - see `app-sidebar.tsx`. */
-export function MobileNav() {
+export function MobileNav({ role }: { role: StaffRole }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -29,7 +30,7 @@ export function MobileNav() {
           <div className="flex items-center justify-between">
             <Dialog.Title asChild>
               <Link
-                href="/dashboard"
+                href={homeFor(role)}
                 onClick={() => setOpen(false)}
                 className="flex items-center gap-2"
               >
@@ -47,7 +48,7 @@ export function MobileNav() {
             </Dialog.Close>
           </div>
 
-          {navigation.map((section) => (
+          {navigationFor(role).map((section) => (
             <div key={section.title} className="flex flex-col gap-1">
               <span className="px-2 text-xs font-semibold uppercase tracking-wide text-ink-muted">
                 {section.title}

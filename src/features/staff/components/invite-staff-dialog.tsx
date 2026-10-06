@@ -4,6 +4,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { UserPlus, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
+import type { Provider } from "@/features/providers/types";
 import { staffRoleLabel, type StaffRole } from "@/lib/auth/roles";
 
 const roles: StaffRole[] = [
@@ -11,17 +12,19 @@ const roles: StaffRole[] = [
   "clinical_administrator",
   "hmo_operations",
   "support_agent",
+  "clinician",
 ];
 
 /** The "Invite staff member" flow: creates a real account via `POST /api/staff` (proxying to the
  * backend's `POST /admin/staff`), then refreshes the page so the new row shows up in the list. */
-export function InviteStaffDialog() {
+export function InviteStaffDialog({ providers }: { providers: Provider[] }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState<StaffRole>("support_agent");
+  const [providerId, setProviderId] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -30,6 +33,7 @@ export function InviteStaffDialog() {
     setEmail("");
     setPassword("");
     setRole("support_agent");
+    setProviderId("");
     setError(null);
   }
 
@@ -42,7 +46,13 @@ export function InviteStaffDialog() {
       const response = await fetch("/api/staff", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fullName, email, password, role }),
+        body: JSON.stringify({
+          fullName,
+          email,
+          password,
+          role,
+          providerId: role === "clinician" ? providerId : undefined,
+        }),
       });
 
       if (!response.ok) {
@@ -155,6 +165,28 @@ export function InviteStaffDialog() {
                 ))}
               </select>
             </div>
+
+            {role === "clinician" && (
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="invite-provider" className="text-sm font-medium text-ink">
+                  Provider profile
+                </label>
+                <select
+                  id="invite-provider"
+                  required
+                  value={providerId}
+                  onChange={(event) => setProviderId(event.target.value)}
+                  className="rounded-control border border-line bg-surface px-3 py-2 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-blue/30"
+                >
+                  <option value="">Choose the doctor this login is for</option>
+                  {providers.map((provider) => (
+                    <option key={provider.id} value={provider.id}>
+                      {provider.displayName} - {provider.specialty}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
 
             {error && (
               <p role="alert" className="text-sm font-medium text-destructive">

@@ -8,7 +8,7 @@ export interface Provider {
   displayName: string;
   specialty: string;
   languages: string[];
-  consultationModes: ("video" | "audio")[];
+  consultationModes: ("video" | "audio" | "in_person")[];
   networkStatus: NetworkStatus;
   city: string | null;
   state: string | null;

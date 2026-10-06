@@ -30,7 +30,7 @@ export function AppTopbar({
   return (
     <header className="flex h-14 shrink-0 items-center justify-between border-b border-line bg-card px-4 sm:px-6">
       <div className="flex items-center gap-2">
-        <MobileNav />
+        <MobileNav role={role} />
         <button
           type="button"
           onClick={toggle}

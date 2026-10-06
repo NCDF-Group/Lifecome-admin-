@@ -1,4 +1,5 @@
 import { UserCog, UserPlus } from "lucide-react";
+import { listProviders } from "@/features/providers/api";
 import { listStaff } from "@/features/staff/api";
 import { InviteStaffDialog } from "@/features/staff/components/invite-staff-dialog";
 import { StaffTable } from "@/features/staff/components/staff-table";
@@ -8,6 +9,8 @@ import { getSession } from "@/lib/auth/session";
 export default async function StaffPage() {
   const [{ items: staff }, session] = await Promise.all([listStaff({ pageSize: 100 }), getSession()]);
   const canInvite = session?.claims.role === "platform_administrator";
+  // Only needed to link a new clinician login to a provider profile.
+  const providers = canInvite ? (await listProviders({ pageSize: 100 })).items : [];
 
   return (
     <div className="flex flex-col gap-6">
@@ -16,7 +19,7 @@ export default async function StaffPage() {
         title="Staff accounts"
         action={
           canInvite ? (
-            <InviteStaffDialog />
+            <InviteStaffDialog providers={providers} />
           ) : (
             <button
               type="button"
