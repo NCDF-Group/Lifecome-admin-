@@ -1,5 +1,14 @@
-// TanStack Query hooks for the "messaging" feature (useQuery/useMutation wrapping
-// src/lib/api/client.ts calls to Lifecome-backend's messaging module). Not
-// implemented yet - this file exists so the feature folder's shape is
-// settled before the real data-fetching code is written.
-export {};
+import { adminFetch } from "@/lib/api/admin";
+import type { PaginatedResult } from "@/lib/api/pagination";
+import { toQueryString } from "@/lib/api/pagination";
+import type { MessageThread, MessageThreadDetail, MessageTopic } from "./types";
+
+export function listThreads(
+  params: { page?: number; pageSize?: number; topic?: MessageTopic } = {},
+): Promise<PaginatedResult<MessageThread>> {
+  return adminFetch(`/admin/messaging/threads${toQueryString(params)}`);
+}
+
+export function getThread(id: string): Promise<MessageThreadDetail> {
+  return adminFetch(`/admin/messaging/threads/${id}`);
+}
