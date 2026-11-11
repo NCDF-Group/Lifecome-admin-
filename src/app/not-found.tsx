@@ -7,10 +7,7 @@ export default function NotFound() {
       {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
       <a className="btn" href="/">
         Return to LifeCome Health
-      </a>{" "}
-      <Link className="btn secondary" href="/screen-board">
-        Screen board
-      </Link>
+      </a>
     </main>
   );
 }
