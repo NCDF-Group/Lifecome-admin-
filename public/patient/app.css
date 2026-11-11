@@ -8,8 +8,8 @@
 
 .health-wordmark{font-size:25px;font-weight:750;letter-spacing:-1px;color:#0874ce;line-height:1}.health-wordmark span{display:block;color:#279064;font-size:12px;letter-spacing:3px;margin-top:5px}.service-card h2{overflow-wrap:normal}.test-hero{padding:22px;border-radius:22px;background:linear-gradient(135deg,#e8f5ff,#e9f8ef);margin:12px 0 22px}.test-hero .icon{width:38px;height:38px;color:#0874ce}.test-hero h2{font-size:23px;margin:12px 0 7px}.test-hero p{line-height:1.65;color:#526780;font-size:14px}
 
-.studio-logo{height:26px;width:auto;display:block;margin-right:12px}
-.health-logo{height:24px;width:auto;display:block}
+
+
 
 /* Clean app shell: a centred, full-height app column on every screen size. */
 body{background:#f3f6fa}
@@ -17,3 +17,11 @@ body{background:#f3f6fa}
 .device-stage{width:100%}
 .device{width:100%;max-width:460px;height:100dvh;min-height:0;margin:0 auto;border:0;border-radius:0;box-shadow:0 0 0 1px #e5eaf2,0 18px 65px #12204412}
 @media(max-width:480px){.device{box-shadow:none}}
+.lc-logo{display:inline-flex;align-items:center;gap:9px;line-height:1;text-decoration:none}
+.lc-logo img{height:30px;width:auto;display:block}
+.lc-word{font-family:Manrope,Inter,-apple-system,sans-serif;font-weight:800;font-size:21px;letter-spacing:-.8px;display:inline-flex;gap:0}
+.lc-word b{font-weight:800}
+.lc-word b:nth-child(1){color:#45af03}.lc-word b:nth-child(2){color:#1a9fe0}.lc-word b:nth-child(3){color:#0667b8;margin-left:5px}
+.lc-logo.on-dark .lc-word b:nth-child(1){color:#a2e10d}.lc-logo.on-dark .lc-word b:nth-child(2){color:#3de5f8}.lc-logo.on-dark .lc-word b:nth-child(3){color:#fff}
+.lc-logo.sm img{height:24px}.lc-logo.sm .lc-word{font-size:17px}
+.lc-logo.lg img{height:40px}.lc-logo.lg .lc-word{font-size:28px}

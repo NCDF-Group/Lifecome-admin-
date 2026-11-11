@@ -12,7 +12,7 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "test": "node --test test/*.test.mjs && node scripts/verify-workflows.mjs"
+    "test": "node --test --no-warnings test/*.test.mjs && node scripts/verify-workflows.mjs"
   },
   "dependencies": {
     "next": "16.3.5",

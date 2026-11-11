@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BrandLogo } from "@/components/brand-logo";
 import { PatientRecordView } from "@/components/patient-record-view";
 import "@/styles/patient-record.css";
 
@@ -11,10 +12,8 @@ export default async function PatientAppPage({ searchParams }: { searchParams: P
     <div className="patient-page">
       <main className="patient-shell">
         <div className="patient-nav">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/lifecome-live-logo.svg" alt="LifeCome Live" height={28} className="patient-logo" />
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-          <a href="/#dashboard">Professional portal</a>
+          <BrandLogo />
+          <a href="/portal#dashboard">Professional portal</a>
         </div>
         <PatientRecordView patientIndex={patientIndex} />
       </main>

@@ -1,16 +1,11 @@
-FROM node:24-alpine AS build
+FROM node:24-alpine
 WORKDIR /app
+ENV NODE_ENV=production
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
 RUN npm run build
-
-FROM node:24-alpine
-WORKDIR /app
-ENV NODE_ENV=production HOSTNAME=0.0.0.0 PORT=3000
-COPY --from=build --chown=node:node /app/.next/standalone ./
-COPY --from=build --chown=node:node /app/.next/static ./.next/static
-COPY --from=build --chown=node:node /app/public ./public
-USER node
+# SQLite lives in /app/data: mount a volume there to keep it.
+VOLUME ["/app/data"]
 EXPOSE 3000
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
