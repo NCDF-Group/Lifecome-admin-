@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "LifeCome Health Professional Portal (Next.js) with the connected patient-app demo. Fictional records only.",
+  "description": "LifeCome Health Professional Portal and connected patient app (Next.js).",
   "license": "UNLICENSED",
   "engines": { "node": ">=22.18.0" },
   "scripts": {

@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function NotFound() {
   return (
     <main className="content" style={{ maxWidth: 560, textAlign: "center", paddingTop: 96 }}>

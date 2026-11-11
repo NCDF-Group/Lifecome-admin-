@@ -10,3 +10,10 @@
 
 .studio-logo{height:26px;width:auto;display:block;margin-right:12px}
 .health-logo{height:24px;width:auto;display:block}
+
+/* Clean app shell: a centred, full-height app column on every screen size. */
+body{background:#f3f6fa}
+.workspace{display:block;max-width:none;margin:0;padding:0}
+.device-stage{width:100%}
+.device{width:100%;max-width:460px;height:100dvh;min-height:0;margin:0 auto;border:0;border-radius:0;box-shadow:0 0 0 1px #e5eaf2,0 18px 65px #12204412}
+@media(max-width:480px){.device{box-shadow:none}}

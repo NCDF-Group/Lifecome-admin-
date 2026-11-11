@@ -64,7 +64,7 @@ export function PatientRecordView({ patientIndex }: { patientIndex: number }) {
     return (
       <>
         <h1>Your health records</h1>
-        <p>Open the professional portal first to initialise the connected fictional record.</p>
+        <p>Open the professional portal first to load the connected record.</p>
       </>
     );
   }
@@ -72,12 +72,12 @@ export function PatientRecordView({ patientIndex }: { patientIndex: number }) {
   const { consultation, prescription, result, observations, referral, care, wellbeing } = record;
   return (
     <>
-      <div className="eyebrow">PATIENT APP · CONNECTED DEMONSTRATION</div>
+      <div className="eyebrow">PATIENT APP</div>
       <h1>Your health records</h1>
       <p className="sub">
         {record.patient.name} · {record.patient.id}
       </p>
-      <div className="banner">Fictional records only. Updates released in the professional portal appear here automatically.</div>
+      <div className="banner">Updates released in the professional portal appear here automatically.</div>
 
       <Section title="Consultation summary" empty="No consultation summary has been released yet.">
         {consultation && (
@@ -93,7 +93,7 @@ export function PatientRecordView({ patientIndex }: { patientIndex: number }) {
       <Section title="Prescriptions" empty="No authorised prescription is available.">
         {prescription &&
           (prescription.status === "Cancelled" ? (
-            <p>The demonstration prescription has been cancelled.</p>
+            <p>The prescription has been cancelled.</p>
           ) : (
             <>
               <Field label="Medicine" value={prescription.medicine} />
@@ -150,7 +150,7 @@ export function PatientRecordView({ patientIndex }: { patientIndex: number }) {
         {record.messages.length > 0 && record.messages.map((m, i) => <Field key={i} label={m.author} value={m.text} />)}
       </Section>
       <p className="footer-note">
-        Last shared update: {record.updatedAt} · This preview uses the same fictional patient ID as the professional portal.
+        Last shared update: {record.updatedAt}
       </p>
     </>
   );

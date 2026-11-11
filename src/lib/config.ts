@@ -1,4 +1,4 @@
-/** Public demo configuration only. Never place credentials in browserConfig(). */
+/** Public configuration only. Never place credentials in browserConfig(). */
 
 export interface PortalConfig {
   professionalOrigin: string | null;

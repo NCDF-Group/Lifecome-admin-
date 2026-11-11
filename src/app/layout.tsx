@@ -8,7 +8,7 @@ const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans", display
 
 export const metadata: Metadata = {
   title: { default: "LifeCome Health | Professional Portal", template: "%s | LifeCome Health" },
-  description: "LifeCome Health professional portal with a connected patient app. Demonstration software: fictional records only.",
+  description: "LifeCome Health professional portal with a connected patient app.",
 };
 
 export const viewport: Viewport = { themeColor: "#102c3c" };
