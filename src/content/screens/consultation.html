@@ -1,0 +1,161 @@
+<div class="prototype">
+<b>LIFECOME HEALTH · PROFESSIONAL PORTAL SCREEN</b>
+<a href="/?role=doctor#consultation">Open interactive screen</a>
+</div>
+<main class="content">
+<div class="pagehead">
+<div>
+<div class="eyebrow">PATIENT WORKSPACE</div>
+<h1>Consultation workspace</h1>
+<p class="sub">Document the encounter and organise the next steps.</p>
+</div>
+<div class="actions">
+<span class="tag blue">In progress</span>
+</div>
+</div>
+<div class="patientbar">
+<span class="avatar">AT</span>
+<div>
+<h2>Alex Taylor</h2>
+<small>LC-DEMO-1001 &nbsp; · &nbsp; DOB 16 April 1984 &nbsp; · &nbsp; 42 years</small>
+</div>
+<div class="tags">
+<span class="tag gray">Fictional patient</span>
+<span class="tag amber">Penicillin — reported rash</span>
+</div>
+</div>
+<div class="tabs">
+<a href="#patient" class="">Overview</a>
+<a href="#history" class="">History</a>
+<a href="#consultation" class="active">Consultation</a>
+<a href="#notes" class="">Notes</a>
+<a href="#medications" class="">Medicines</a>
+<a href="#results" class="">Results</a>
+<a href="#documents" class="">Documents</a>
+<a href="#consent" class="">Consent</a>
+</div>
+<div class="grid">
+<div>
+<section class="card">
+<header class="card-head">
+<h2>Encounter checks</h2>
+</header>
+<div class="card-body">
+<form data-form="encounter">
+<label class="check">
+<input type="checkbox" name="identity" required>
+<span>Patient identity and current location confirmed.</span>
+</label>
+<label class="check">
+<input type="checkbox" name="consent" required>
+<span>Consent and suitability for the consultation format reviewed.</span>
+</label>
+<label class="check">
+<input type="checkbox" name="history" required>
+<span>Allergy and medication history reviewed; uncertainties documented.</span>
+</label>
+<label class="field">
+<span>Consultation context</span>
+<textarea name="context" required rows="3">Fictional consultation. Confirm the reason for attendance and patient expectations.</textarea>
+</label>
+<div class="footer-actions">
+<a class="btn ghost" href="#patient">Back</a>
+<button class="btn" type="submit">Open consultation notes<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M4 12h16 m-6-6 6 6-6 6"/>
+</svg>
+</button>
+</div>
+</form>
+</div>
+</section>
+<section class="card">
+<header class="card-head">
+<h2>Consultation tools</h2>
+</header>
+<div class="card-body">
+<div class="actions">
+<a class="btn secondary" href="#video">Video room</a>
+<a class="btn secondary" href="#observations">Observations</a>
+<a class="btn secondary" href="#notes">Clinical notes</a>
+<a class="btn secondary" href="#prescriptions">Prescribing</a>
+<a class="btn secondary" href="#test-order">Order tests</a>
+<a class="btn secondary" href="#referral-new">Referral</a>
+</div>
+</div>
+</section>
+</div>
+<div>
+<section class="card">
+<header class="card-head">
+<h2>Patient safety</h2>
+</header>
+<div class="card-body">
+<div class="banner amber">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0 M12 11v6 M12 7v.1"/>
+</svg>
+<span>Penicillin — reported rash</span>
+</div>
+<div class="detail">
+<span>Identity</span>
+<strong>Confirm with patient</strong>
+</div>
+<div class="detail">
+<span>Usual GP</span>
+<strong>Details and consent to verify</strong>
+</div>
+<div class="detail">
+<span>Contact preference</span>
+<strong>In-app notification; ask before calling</strong>
+</div>
+</div>
+</section>
+<section class="card">
+<header class="card-head">
+<h2>Encounter progress</h2>
+</header>
+<div class="card-body">
+<div class="row">
+<span class="task-dot blue">
+</span>
+<div class="grow">
+<strong>Clinical note</strong>
+<small>Draft in progress</small>
+</div>
+<a href="#notes" aria-label="Open Clinical note">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M4 12h16 m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</div>
+<div class="row">
+<span class="task-dot green">
+</span>
+<div class="grow">
+<strong>Patient summary</strong>
+<small>Not released</small>
+</div>
+<a href="#summary" aria-label="Open Patient summary">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M4 12h16 m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</div>
+<div class="row">
+<span class="task-dot blue">
+</span>
+<div class="grow">
+<strong>Follow-up actions</strong>
+<small>Record owner and review date</small>
+</div>
+<a href="#task-new" aria-label="Open Follow-up actions">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M4 12h16 m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>

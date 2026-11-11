@@ -1,0 +1,25 @@
+{
+  "screens": 56,
+  "checks": [
+    "All screen renders and route destinations",
+    "Signed-note locking and addendum history",
+    "Draft and unreleased result exclusion from patient payload",
+    "Explicit summary and result release",
+    "Patient ID isolation",
+    "Prescription safety gating and cancellation",
+    "Prescribing role restrictions",
+    "Administrative clinical-access restriction",
+    "Care and wellbeing field minimisation"
+  ],
+  "status": "passed",
+  "browserChecks": [
+    "Published doctor dashboard and note entry inspected",
+    "Signed note locked and patient summary released",
+    "Existing patient app received the same fictional patient summary",
+    "Unreleased result remained hidden in the existing patient app",
+    "Released result arrived in the existing patient app without re-entry",
+    "Reception role blocked from clinical notes",
+    "Published screen board contains 56 layouts"
+  ],
+  "integrationLimit": "Demonstration browser bridge only; no real clinical backend or authentication."
+}

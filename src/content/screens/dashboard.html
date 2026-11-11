@@ -1,0 +1,250 @@
+<div class="prototype">
+<b>LIFECOME HEALTH · PROFESSIONAL PORTAL SCREEN</b>
+<a href="/?role=doctor#dashboard">Open interactive screen</a>
+</div>
+<main class="content">
+<div class="pagehead">
+<div>
+<div class="eyebrow">TODAY AT LIFECOME</div>
+<h1>Good morning, Dr Patel.</h1>
+<p class="sub">Monday, 9 November 2026 · Your day, clearly organised.</p>
+</div>
+<div class="actions">
+<a class="btn secondary" href="#schedule">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M5 3v4 M19 3v4 M3 9h18 M4 5h16v16H4z M8 13h2 M14 13h2"/>
+</svg>View schedule</a>
+</div>
+</div>
+<div class="metrics">
+<div class="metric">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M5 3v4 M19 3v4 M3 9h18 M4 5h16v16H4z M8 13h2 M14 13h2"/>
+</svg>
+<small>Appointments</small>
+<strong>8</strong>
+<span>3 shown in this demo</span>
+</div>
+<div class="metric">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M9 3h6 M10 3v7l-6 9q-1 2 2 2h12q3 0 2-2l-6-9V3 M8 15h8"/>
+</svg>
+<small>Results to review</small>
+<strong>3</strong>
+<span>1 prioritised for review</span>
+</div>
+<div class="metric">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M9 3h6v4H9z M8 5H4v17h16V5h-4 M8 12l2 2 5-5 M8 18h8"/>
+</svg>
+<small>Open tasks</small>
+<strong>6</strong>
+<span>Across your workspace</span>
+</div>
+<div class="metric">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M5 2h9l5 5v15H5z M14 2v6h5 M8 12h8 M8 16h6"/>
+</svg>
+<small>Records completed</small>
+<strong>0</strong>
+<span>This demonstration session</span>
+</div>
+</div>
+<div class="grid">
+<div>
+<section class="card">
+<header class="card-head">
+<h2>Today’s appointments</h2>
+<span class="tag gray">Mon 9 Nov</span>
+</header>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Patient</th>
+<th>Service</th>
+<th>Status</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>09:30</td>
+<td>
+<div class="patient-cell">
+<span class="avatar ">AT</span>
+<span>
+<strong>Alex Taylor</strong>
+<small>LC-DEMO-1001</small>
+</span>
+</div>
+</td>
+<td>GP consultation</td>
+<td>
+<span class="tag green">Arrived</span>
+</td>
+<td>
+<button class="btn secondary" data-patient="0" data-target="patient">Open</button>
+</td>
+</tr>
+<tr>
+<td>10:00</td>
+<td>
+<div class="patient-cell">
+<span class="avatar green">ME</span>
+<span>
+<strong>Morgan Ellis</strong>
+<small>LC-DEMO-1002</small>
+</span>
+</div>
+</td>
+<td>Menopause review</td>
+<td>
+<span class="tag gray">Expected</span>
+</td>
+<td>
+<button class="btn secondary" data-patient="1" data-target="patient">Open</button>
+</td>
+</tr>
+<tr>
+<td>11:00</td>
+<td>
+<div class="patient-cell">
+<span class="avatar ">RA</span>
+<span>
+<strong>Robin Avery</strong>
+<small>LC-DEMO-1003</small>
+</span>
+</div>
+</td>
+<td>Professional care</td>
+<td>
+<span class="tag gray">Scheduled</span>
+</td>
+<td>
+<button class="btn secondary" data-patient="2" data-target="patient">Open</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="card">
+<header class="card-head">
+<h2>Your next steps</h2>
+</header>
+<div class="card-body">
+<div class="row">
+<span class="task-dot blue">
+</span>
+<div class="grow">
+<strong>Complete the patient record</strong>
+<small>Notes, agreed actions and follow-up</small>
+</div>
+<a href="#consultation" aria-label="Open Complete the patient record">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M4 12h16 m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</div>
+<div class="row">
+<span class="task-dot green">
+</span>
+<div class="grow">
+<strong>Check outstanding work</strong>
+<small>Tasks assigned to you and your team</small>
+</div>
+<a href="#tasks" aria-label="Open Check outstanding work">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M4 12h16 m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</div>
+</div>
+</section>
+</div>
+<div>
+<section class="card">
+<header class="card-head">
+<h2>Needs your attention</h2>
+<span class="tag amber">Today</span>
+</header>
+<div class="card-body">
+<div class="row">
+<span class="task-dot blue">
+</span>
+<div class="grow">
+<strong>Review an outstanding result</strong>
+<small>Alex Taylor · clinician review required</small>
+</div>
+<a href="#result-detail" aria-label="Open Review an outstanding result">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M4 12h16 m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</div>
+<div class="row">
+<span class="task-dot blue">
+</span>
+<div class="grow">
+<strong>Follow-up reminder</strong>
+<small>Confirm the next action and owner</small>
+</div>
+<a href="#tasks" aria-label="Open Follow-up reminder">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M4 12h16 m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</div>
+<div class="row">
+<span class="task-dot blue">
+</span>
+<div class="grow">
+<strong>Patient message</strong>
+<small>A question about the next appointment</small>
+</div>
+<a href="#messages" aria-label="Open Patient message">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M4 12h16 m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</div>
+</div>
+</section>
+<section class="card">
+<header class="card-head">
+<h2>One connected record</h2>
+</header>
+<div class="card-body">
+<p class="sub">See how approved information appears in the patient app.</p>
+<a class="btn secondary" href="#patient-preview">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M14 6a4 4 0 1 1-8 0 4 4 0 0 1 8 0 M2 22v-5a7 7 0 0 1 14 0v5 M17 3a4 4 0 0 1 0 8 M18 14a5 5 0 0 1 4 5v3"/>
+</svg>Open patient-view preview</a>
+<p class="audit">Only released records appear in the shared patient view.</p>
+</div>
+</section>
+<section class="card">
+<header class="card-head">
+<h2>Your workspace</h2>
+</header>
+<div class="card-body">
+<div class="detail">
+<span>Role</span>
+<strong>Doctor / prescriber</strong>
+</div>
+<div class="detail">
+<span>Location</span>
+<strong>LifeCome clinic · demo</strong>
+</div>
+<div class="detail">
+<span>Session</span>
+<strong>Fictional records only</strong>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>

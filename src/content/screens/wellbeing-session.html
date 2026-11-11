@@ -1,0 +1,65 @@
+<div class="prototype">
+<b>LIFECOME HEALTH · PROFESSIONAL PORTAL SCREEN</b>
+<a href="/?role=wellbeing#wellbeing-session">Open interactive screen</a>
+</div>
+<main class="content">
+<div class="pagehead">
+<div>
+<div class="eyebrow">WORKSPACE</div>
+<h1>Wellbeing session record</h1>
+<p class="sub">Document the discussion and agreed goals within your scope.</p>
+</div>
+<div class="actions">
+</div>
+</div>
+<div class="patientbar">
+<span class="avatar">AT</span>
+<div>
+<h2>Alex Taylor</h2>
+<small>LC-DEMO-1001 &nbsp; · &nbsp; DOB 16 April 1984 &nbsp; · &nbsp; 42 years</small>
+</div>
+<div class="tags">
+<span class="tag gray">Fictional patient</span>
+<span class="tag amber">Penicillin — reported rash</span>
+</div>
+</div>
+<section class="card">
+<header class="card-head">
+<h2>Session notes</h2>
+</header>
+<div class="card-body">
+<form data-form="wellbeing-note">
+<label class="field">
+<span>Session discussion</span>
+<textarea name="discussion" required rows="3">Discuss routines, priorities and the person’s own goals.</textarea>
+</label>
+<label class="field">
+<span>Agreed goal</span>
+<textarea name="goal" required rows="3">Agree one achievable goal with the patient.</textarea>
+</label>
+<label class="field">
+<span>Actions and review arrangements</span>
+<textarea name="plan" required rows="3">Record the agreed actions and review date.</textarea>
+</label>
+<label class="field">
+<span>Any clinical concern?</span>
+<select name="concern" required>
+<option >No concern identified in this example</option>
+<option >Clinical review requested</option>
+</select>
+</label>
+<label class="check">
+<input type="checkbox" name="confirmed" required>
+<span>The patient-facing plan reflects the agreed goals and appropriate scope.</span>
+</label>
+<div class="footer-actions">
+<a class="btn ghost" href="#wellbeing">Back</a>
+<button class="btn" type="submit">Sign session and share plan<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M4 12h16 m-6-6 6 6-6 6"/>
+</svg>
+</button>
+</div>
+</form>
+</div>
+</section>
+</main>

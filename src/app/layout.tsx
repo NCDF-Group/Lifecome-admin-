@@ -1,33 +1,25 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { cookies } from "next/headers";
-import { isThemePreference, THEME_COOKIE } from "@/lib/theme";
-import "./globals.css";
+import type { Metadata, Viewport } from "next";
+import { DM_Sans, Manrope } from "next/font/google";
+import Script from "next/script";
+import "@/styles/portal.css";
 
-// Same font as the LifeCome Live mobile app (see Lifecome-mobile's app_typography.dart) - one
-// look across every surface a staff member or patient touches.
-const interFont = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans-body",
-});
+const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
+const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "LifeCome Live - Operations console",
-  description:
-    "Admin, payer ops, support and audit tooling for LifeCome Live staff.",
-  robots: { index: false, follow: false },
+  title: { default: "LifeCome Health | Professional Portal", template: "%s | LifeCome Health" },
+  description: "LifeCome Health professional portal with a connected patient app. Demonstration software: fictional records only.",
 };
 
-export default async function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
-  const stored = (await cookies()).get(THEME_COOKIE)?.value;
-  const theme = isThemePreference(stored) ? stored : "system";
+export const viewport: Viewport = { themeColor: "#102c3c" };
 
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    // The avatar menu changes `data-theme` on the client without a re-render of this element.
-    <html lang="en" data-theme={theme} className={interFont.variable} suppressHydrationWarning>
-      <body>{children}</body>
+    <html lang="en" className={`${manrope.variable} ${dmSans.variable}`}>
+      <body>
+        {children}
+        <Script src="/runtime-config.js" strategy="beforeInteractive" />
+      </body>
     </html>
   );
 }

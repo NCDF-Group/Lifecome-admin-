@@ -1,0 +1,1541 @@
+[
+  {
+    "id": "001",
+    "key": "welcome",
+    "title": "Welcome",
+    "group": "Start & account",
+    "description": "The approved four-service entry point.",
+    "parent": "welcome",
+    "public": true
+  },
+  {
+    "id": "002",
+    "key": "sign-in",
+    "title": "Log in",
+    "group": "Start & account",
+    "description": "Demo sign-in with a prepared account.",
+    "parent": "welcome",
+    "public": true
+  },
+  {
+    "id": "003",
+    "key": "sign-up",
+    "title": "Create account",
+    "group": "Start & account",
+    "description": "Account creation, consent and email verification entry.",
+    "parent": "welcome",
+    "public": true
+  },
+  {
+    "id": "004",
+    "key": "verify",
+    "title": "Verify email",
+    "group": "Start & account",
+    "description": "Verification code and resend state.",
+    "parent": "sign-up",
+    "public": true
+  },
+  {
+    "id": "005",
+    "key": "forgot-password",
+    "title": "Forgot password",
+    "group": "Start & account",
+    "description": "Password reset request.",
+    "parent": "sign-in",
+    "public": true
+  },
+  {
+    "id": "006",
+    "key": "reset-password",
+    "title": "Set new password",
+    "group": "Start & account",
+    "description": "New password and confirmation validation.",
+    "parent": "sign-in",
+    "public": true
+  },
+  {
+    "id": "007",
+    "key": "profile-setup",
+    "title": "Complete profile",
+    "group": "Start & account",
+    "description": "Basic patient details and accessibility preferences.",
+    "parent": "verify",
+    "public": false
+  },
+  {
+    "id": "008",
+    "key": "home",
+    "title": "Home",
+    "group": "Home & navigation",
+    "description": "Four services, continuing care and shared quick actions.",
+    "parent": "home",
+    "public": false
+  },
+  {
+    "id": "009",
+    "key": "visits",
+    "title": "Visits",
+    "group": "Home & navigation",
+    "description": "Appointments and care visits across the four services.",
+    "parent": "home",
+    "public": false
+  },
+  {
+    "id": "010",
+    "key": "visit-detail",
+    "title": "Appointment details",
+    "group": "Home & navigation",
+    "description": "Manage a scheduled GP appointment.",
+    "parent": "visits",
+    "public": false
+  },
+  {
+    "id": "011",
+    "key": "reschedule",
+    "title": "Reschedule appointment",
+    "group": "Home & navigation",
+    "description": "Select a replacement appointment time.",
+    "parent": "visit-detail",
+    "public": false
+  },
+  {
+    "id": "012",
+    "key": "cancel-visit",
+    "title": "Cancel appointment",
+    "group": "Home & navigation",
+    "description": "Cancellation reason, terms and explicit confirmation.",
+    "parent": "visit-detail",
+    "public": false
+  },
+  {
+    "id": "013",
+    "key": "cancellation-confirmed",
+    "title": "Cancellation confirmed",
+    "group": "Home & navigation",
+    "description": "Cancellation outcome and next actions.",
+    "parent": "visits",
+    "public": false
+  },
+  {
+    "id": "014",
+    "key": "messages",
+    "title": "Inbox",
+    "group": "Messages",
+    "description": "Shared messaging for clinical, care, wellbeing and support teams.",
+    "parent": "home",
+    "public": false
+  },
+  {
+    "id": "015",
+    "key": "message-thread",
+    "title": "GP conversation",
+    "group": "Messages",
+    "description": "Send a local demo message and receive a sample acknowledgement.",
+    "parent": "messages",
+    "public": false
+  },
+  {
+    "id": "016",
+    "key": "care-message",
+    "title": "Care conversation",
+    "group": "Messages",
+    "description": "Care coordination message thread.",
+    "parent": "messages",
+    "public": false
+  },
+  {
+    "id": "017",
+    "key": "wellbeing-message",
+    "title": "Wellbeing conversation",
+    "group": "Messages",
+    "description": "Wellbeing practitioner message thread.",
+    "parent": "messages",
+    "public": false
+  },
+  {
+    "id": "018",
+    "key": "new-message",
+    "title": "New message",
+    "group": "Messages",
+    "description": "Choose team, subject and message.",
+    "parent": "messages",
+    "public": false
+  },
+  {
+    "id": "019",
+    "key": "profile",
+    "title": "Profile",
+    "group": "Account & benefits",
+    "description": "Shared identity, funding, preferences and support.",
+    "parent": "home",
+    "public": false
+  },
+  {
+    "id": "020",
+    "key": "personal-details",
+    "title": "Personal details",
+    "group": "Account & benefits",
+    "description": "Editable profile details.",
+    "parent": "profile",
+    "public": false
+  },
+  {
+    "id": "021",
+    "key": "medical-history",
+    "title": "Health profile",
+    "group": "Account & benefits",
+    "description": "Patient-provided medical history.",
+    "parent": "profile",
+    "public": false
+  },
+  {
+    "id": "022",
+    "key": "benefits",
+    "title": "Membership & benefits",
+    "group": "Account & benefits",
+    "description": "Separate membership, employer entitlements and insurance cover.",
+    "parent": "profile",
+    "public": false
+  },
+  {
+    "id": "023",
+    "key": "membership",
+    "title": "Membership options",
+    "group": "Account & benefits",
+    "description": "Membership presentation without inventing approved plan terms.",
+    "parent": "benefits",
+    "public": false
+  },
+  {
+    "id": "024",
+    "key": "membership-detail",
+    "title": "Membership details",
+    "group": "Account & benefits",
+    "description": "Membership entitlements and demo activation.",
+    "parent": "membership",
+    "public": false
+  },
+  {
+    "id": "025",
+    "key": "employer-access",
+    "title": "Activate employer access",
+    "group": "Account & benefits",
+    "description": "Verify employer benefit code.",
+    "parent": "benefits",
+    "public": false
+  },
+  {
+    "id": "026",
+    "key": "membership-activated",
+    "title": "Benefit activated",
+    "group": "Account & benefits",
+    "description": "Activation confirmation and booking entry.",
+    "parent": "benefits",
+    "public": false
+  },
+  {
+    "id": "027",
+    "key": "payment-methods",
+    "title": "Payment methods",
+    "group": "Account & benefits",
+    "description": "Demo card display, add and remove actions.",
+    "parent": "profile",
+    "public": false
+  },
+  {
+    "id": "028",
+    "key": "privacy",
+    "title": "Privacy & permissions",
+    "group": "Account & benefits",
+    "description": "Granular sample sharing and marketing controls.",
+    "parent": "profile",
+    "public": false
+  },
+  {
+    "id": "029",
+    "key": "notifications",
+    "title": "Notifications",
+    "group": "Account & benefits",
+    "description": "Appointment and account notification preferences.",
+    "parent": "profile",
+    "public": false
+  },
+  {
+    "id": "030",
+    "key": "help",
+    "title": "Help & support",
+    "group": "Help & legal",
+    "description": "FAQs and support routes.",
+    "parent": "profile",
+    "public": false
+  },
+  {
+    "id": "031",
+    "key": "support-request",
+    "title": "Contact support",
+    "group": "Help & legal",
+    "description": "Support ticket with subject and description.",
+    "parent": "help",
+    "public": false
+  },
+  {
+    "id": "032",
+    "key": "support-confirmed",
+    "title": "Support received",
+    "group": "Help & legal",
+    "description": "Support request receipt and messaging route.",
+    "parent": "help",
+    "public": false
+  },
+  {
+    "id": "033",
+    "key": "urgent-help",
+    "title": "Urgent help",
+    "group": "Help & legal",
+    "description": "Clear emergency signposting, separate from routine services.",
+    "parent": "help",
+    "public": false
+  },
+  {
+    "id": "034",
+    "key": "terms",
+    "title": "Terms of use",
+    "group": "Help & legal",
+    "description": "Prototype terms page and service-specific agreements.",
+    "parent": "help",
+    "public": true
+  },
+  {
+    "id": "035",
+    "key": "privacy-notice",
+    "title": "Privacy notice",
+    "group": "Help & legal",
+    "description": "Transparent explanation of prototype data handling.",
+    "parent": "help",
+    "public": true
+  },
+  {
+    "id": "036",
+    "key": "accessibility",
+    "title": "Accessibility",
+    "group": "Help & legal",
+    "description": "Working text-size and motion controls.",
+    "parent": "profile",
+    "public": false
+  },
+  {
+    "id": "037",
+    "key": "gp",
+    "title": "GP services",
+    "group": "GP",
+    "description": "Online and physical GP appointments with Menopause Care nested here.",
+    "parent": "home",
+    "public": false
+  },
+  {
+    "id": "038",
+    "key": "gp-eligibility",
+    "title": "Appointment eligibility",
+    "group": "GP",
+    "description": "Location, age and non-emergency check before booking.",
+    "parent": "gp",
+    "public": false
+  },
+  {
+    "id": "039",
+    "key": "gp-reason",
+    "title": "Reason for appointment",
+    "group": "GP",
+    "description": "Select the appointment topic.",
+    "parent": "gp-eligibility",
+    "public": false
+  },
+  {
+    "id": "040",
+    "key": "gp-doctors",
+    "title": "Choose a GP",
+    "group": "GP",
+    "description": "Available demonstration clinicians.",
+    "parent": "gp-reason",
+    "public": false
+  },
+  {
+    "id": "041",
+    "key": "gp-doctor",
+    "title": "GP profile · Maya",
+    "group": "GP",
+    "description": "Clinician profile, scope and booking action.",
+    "parent": "gp-doctors",
+    "public": false
+  },
+  {
+    "id": "042",
+    "key": "gp-doctor-james",
+    "title": "GP profile · James",
+    "group": "GP",
+    "description": "Alternative clinician profile for the selection journey.",
+    "parent": "gp-doctors",
+    "public": false
+  },
+  {
+    "id": "043",
+    "key": "clinics",
+    "title": "Find a clinic",
+    "group": "GP",
+    "description": "Clinic list and location search.",
+    "parent": "gp-eligibility",
+    "public": false
+  },
+  {
+    "id": "044",
+    "key": "clinic-detail",
+    "title": "Clinic details",
+    "group": "GP",
+    "description": "Location, facilities and physical appointment entry.",
+    "parent": "clinics",
+    "public": false
+  },
+  {
+    "id": "045",
+    "key": "gp-slots",
+    "title": "Choose date & time",
+    "group": "GP",
+    "description": "GP appointment slot selection.",
+    "parent": "gp-doctor",
+    "public": false
+  },
+  {
+    "id": "046",
+    "key": "gp-intake",
+    "title": "Pre-appointment form",
+    "group": "GP",
+    "description": "Reason, history and consent before the consultation.",
+    "parent": "gp-slots",
+    "public": false
+  },
+  {
+    "id": "047",
+    "key": "gp-review",
+    "title": "Review GP booking",
+    "group": "GP",
+    "description": "Appointment, funding route and final price review.",
+    "parent": "gp-intake",
+    "public": false
+  },
+  {
+    "id": "048",
+    "key": "gp-payment",
+    "title": "GP payment",
+    "group": "GP",
+    "description": "Simulated payment and final booking confirmation.",
+    "parent": "gp-review",
+    "public": false
+  },
+  {
+    "id": "049",
+    "key": "gp-confirmed",
+    "title": "GP booking confirmed",
+    "group": "GP",
+    "description": "Booking reference, summary and next steps.",
+    "parent": "gp-payment",
+    "public": false
+  },
+  {
+    "id": "050",
+    "key": "gp-waiting",
+    "title": "Video waiting room",
+    "group": "GP",
+    "description": "Pre-call checks and simulated joining.",
+    "parent": "visit-detail",
+    "public": false
+  },
+  {
+    "id": "051",
+    "key": "gp-call",
+    "title": "Video consultation",
+    "group": "GP",
+    "description": "Simulated consultation with microphone, camera and end-call controls.",
+    "parent": "gp-waiting",
+    "public": false
+  },
+  {
+    "id": "052",
+    "key": "gp-summary",
+    "title": "Consultation summary",
+    "group": "GP",
+    "description": "Post-visit notes and follow-up entry.",
+    "parent": "visits",
+    "public": false
+  },
+  {
+    "id": "053",
+    "key": "gp-careplan",
+    "title": "GP care plan",
+    "group": "GP",
+    "description": "Ongoing actions following a GP consultation.",
+    "parent": "gp",
+    "public": false
+  },
+  {
+    "id": "054",
+    "key": "records",
+    "title": "Health records",
+    "group": "Health records",
+    "description": "Central hub for GP records, medication, referrals and results.",
+    "parent": "home",
+    "public": false
+  },
+  {
+    "id": "055",
+    "key": "record-detail",
+    "title": "Consultation record",
+    "group": "Health records",
+    "description": "Readable sample consultation document and download.",
+    "parent": "records",
+    "public": false
+  },
+  {
+    "id": "056",
+    "key": "prescriptions",
+    "title": "Prescriptions",
+    "group": "Health records",
+    "description": "Prescription list and status.",
+    "parent": "records",
+    "public": false
+  },
+  {
+    "id": "057",
+    "key": "prescription-detail",
+    "title": "Prescription details",
+    "group": "Health records",
+    "description": "Prescription metadata, pharmacy and sample document.",
+    "parent": "prescriptions",
+    "public": false
+  },
+  {
+    "id": "058",
+    "key": "referrals",
+    "title": "Referrals",
+    "group": "Health records",
+    "description": "Referral list and handoff status.",
+    "parent": "records",
+    "public": false
+  },
+  {
+    "id": "059",
+    "key": "referral-detail",
+    "title": "Referral details",
+    "group": "Health records",
+    "description": "Referral document and booking responsibilities.",
+    "parent": "referrals",
+    "public": false
+  },
+  {
+    "id": "060",
+    "key": "results",
+    "title": "Test results",
+    "group": "Health records",
+    "description": "Result list with review status.",
+    "parent": "records",
+    "public": false
+  },
+  {
+    "id": "061",
+    "key": "result-detail",
+    "title": "Result details",
+    "group": "Health records",
+    "description": "Clinician-reviewed result document without fabricated medical findings.",
+    "parent": "results",
+    "public": false
+  },
+  {
+    "id": "062",
+    "key": "menopause",
+    "title": "Menopause Care",
+    "group": "Menopause Care",
+    "description": "Menopause service hub within GP.",
+    "parent": "gp",
+    "public": false
+  },
+  {
+    "id": "063",
+    "key": "menopause-assessment",
+    "title": "Menopause assessment",
+    "group": "Menopause Care",
+    "description": "Symptom topics and personal priorities.",
+    "parent": "menopause",
+    "public": false
+  },
+  {
+    "id": "064",
+    "key": "menopause-history",
+    "title": "Menopause health history",
+    "group": "Menopause Care",
+    "description": "Relevant history for clinician review.",
+    "parent": "menopause-assessment",
+    "public": false
+  },
+  {
+    "id": "065",
+    "key": "menopause-assessment-review",
+    "title": "Review menopause assessment",
+    "group": "Menopause Care",
+    "description": "Review entered assessment before saving.",
+    "parent": "menopause-history",
+    "public": false
+  },
+  {
+    "id": "066",
+    "key": "menopause-booking",
+    "title": "Menopause appointment type",
+    "group": "Menopause Care",
+    "description": "Online or clinic menopause appointment with shared GP booking.",
+    "parent": "menopause",
+    "public": false
+  },
+  {
+    "id": "067",
+    "key": "menopause-plan",
+    "title": "Menopause care plan",
+    "group": "Menopause Care",
+    "description": "Clinician-led plan, HRT discussion and follow-up links.",
+    "parent": "menopause",
+    "public": false
+  },
+  {
+    "id": "068",
+    "key": "menopause-review",
+    "title": "Menopause review check-in",
+    "group": "Menopause Care",
+    "description": "Follow-up intake before booking another GP appointment.",
+    "parent": "menopause-plan",
+    "public": false
+  },
+  {
+    "id": "069",
+    "key": "care",
+    "title": "Professional Care",
+    "group": "Care",
+    "description": "Professional care hub with request and ongoing care entry points.",
+    "parent": "home",
+    "public": false
+  },
+  {
+    "id": "070",
+    "key": "care-services",
+    "title": "Care service catalogue",
+    "group": "Care",
+    "description": "Care categories organised around customer needs.",
+    "parent": "care",
+    "public": false
+  },
+  {
+    "id": "071",
+    "key": "care-personal",
+    "title": "Personal care details",
+    "group": "Care",
+    "description": "Personal care scope and request entry.",
+    "parent": "care-services",
+    "public": false
+  },
+  {
+    "id": "072",
+    "key": "care-home",
+    "title": "Help at home details",
+    "group": "Care",
+    "description": "Practical support description.",
+    "parent": "care-services",
+    "public": false
+  },
+  {
+    "id": "073",
+    "key": "care-companionship",
+    "title": "Companionship details",
+    "group": "Care",
+    "description": "Social support service description.",
+    "parent": "care-services",
+    "public": false
+  },
+  {
+    "id": "074",
+    "key": "care-respite",
+    "title": "Respite support details",
+    "group": "Care",
+    "description": "Temporary care support service description.",
+    "parent": "care-services",
+    "public": false
+  },
+  {
+    "id": "075",
+    "key": "care-request-person",
+    "title": "Care request · person",
+    "group": "Care",
+    "description": "Identify care recipient and relationship.",
+    "parent": "care",
+    "public": false
+  },
+  {
+    "id": "076",
+    "key": "care-request-needs",
+    "title": "Care request · needs",
+    "group": "Care",
+    "description": "Requested support and preferences.",
+    "parent": "care-request-person",
+    "public": false
+  },
+  {
+    "id": "077",
+    "key": "care-request-schedule",
+    "title": "Care request · schedule",
+    "group": "Care",
+    "description": "Preferred care timing and contact route.",
+    "parent": "care-request-needs",
+    "public": false
+  },
+  {
+    "id": "078",
+    "key": "care-request-review",
+    "title": "Review care request",
+    "group": "Care",
+    "description": "Review request before assessment enquiry.",
+    "parent": "care-request-schedule",
+    "public": false
+  },
+  {
+    "id": "079",
+    "key": "care-submitted",
+    "title": "Care request received",
+    "group": "Care",
+    "description": "Assessment request confirmation.",
+    "parent": "care-request-review",
+    "public": false
+  },
+  {
+    "id": "080",
+    "key": "care-status",
+    "title": "Care request status",
+    "group": "Care",
+    "description": "Assessment, proposal and acceptance progress.",
+    "parent": "care",
+    "public": false
+  },
+  {
+    "id": "081",
+    "key": "care-assessment",
+    "title": "Care assessment",
+    "group": "Care",
+    "description": "Assessment appointment details and preparation.",
+    "parent": "care-status",
+    "public": false
+  },
+  {
+    "id": "082",
+    "key": "care-proposal",
+    "title": "Care proposal",
+    "group": "Care",
+    "description": "Proposed care package, schedule and transparent illustrative costs.",
+    "parent": "care-status",
+    "public": false
+  },
+  {
+    "id": "083",
+    "key": "care-agreement",
+    "title": "Care agreement",
+    "group": "Care",
+    "description": "Explicit acceptance of a reviewed care proposal.",
+    "parent": "care-proposal",
+    "public": false
+  },
+  {
+    "id": "084",
+    "key": "care-plan",
+    "title": "My care plan",
+    "group": "Care",
+    "description": "Agreed professional support, routines and care actions.",
+    "parent": "care",
+    "public": false
+  },
+  {
+    "id": "085",
+    "key": "care-visits",
+    "title": "Care visits",
+    "group": "Care",
+    "description": "Scheduled professional care visits.",
+    "parent": "care",
+    "public": false
+  },
+  {
+    "id": "086",
+    "key": "care-visit-detail",
+    "title": "Care visit details",
+    "group": "Care",
+    "description": "Visit information and change request route.",
+    "parent": "care-visits",
+    "public": false
+  },
+  {
+    "id": "087",
+    "key": "care-visit-note",
+    "title": "Completed care visit",
+    "group": "Care",
+    "description": "Care visit completion and sample notes.",
+    "parent": "care-visits",
+    "public": false
+  },
+  {
+    "id": "088",
+    "key": "care-team",
+    "title": "My care team",
+    "group": "Care",
+    "description": "Care coordinator and professional profiles.",
+    "parent": "care",
+    "public": false
+  },
+  {
+    "id": "089",
+    "key": "care-change",
+    "title": "Request care changes",
+    "group": "Care",
+    "description": "Change request without silently cancelling agreed care.",
+    "parent": "care-plan",
+    "public": false
+  },
+  {
+    "id": "090",
+    "key": "care-change-confirmed",
+    "title": "Care change received",
+    "group": "Care",
+    "description": "Change request acknowledgement and coordinator follow-up.",
+    "parent": "care-change",
+    "public": false
+  },
+  {
+    "id": "091",
+    "key": "wellbeing",
+    "title": "Wellbeing hub",
+    "group": "Wellbeing",
+    "description": "Coaching, everyday support and Wellbeing Shop.",
+    "parent": "home",
+    "public": false
+  },
+  {
+    "id": "092",
+    "key": "wellbeing-lifestyle",
+    "title": "Lifestyle coaching",
+    "group": "Wellbeing",
+    "description": "Service detail and session booking entry.",
+    "parent": "wellbeing",
+    "public": false
+  },
+  {
+    "id": "093",
+    "key": "wellbeing-nutrition",
+    "title": "Healthy eating support",
+    "group": "Wellbeing",
+    "description": "Education session and clear clinical referral route.",
+    "parent": "wellbeing",
+    "public": false
+  },
+  {
+    "id": "094",
+    "key": "wellbeing-stress",
+    "title": "Stress & relaxation",
+    "group": "Wellbeing",
+    "description": "General wellbeing session with urgent support route.",
+    "parent": "wellbeing",
+    "public": false
+  },
+  {
+    "id": "095",
+    "key": "wellbeing-practitioner",
+    "title": "Wellbeing practitioner",
+    "group": "Wellbeing",
+    "description": "Practitioner profile before selecting a session.",
+    "parent": "wellbeing",
+    "public": false
+  },
+  {
+    "id": "096",
+    "key": "wellbeing-slots",
+    "title": "Choose wellbeing session",
+    "group": "Wellbeing",
+    "description": "Session date and time selection.",
+    "parent": "wellbeing-practitioner",
+    "public": false
+  },
+  {
+    "id": "097",
+    "key": "wellbeing-review",
+    "title": "Review wellbeing booking",
+    "group": "Wellbeing",
+    "description": "Goals, session details and payment review.",
+    "parent": "wellbeing-slots",
+    "public": false
+  },
+  {
+    "id": "098",
+    "key": "wellbeing-confirmed",
+    "title": "Wellbeing booking confirmed",
+    "group": "Wellbeing",
+    "description": "Session confirmation and next step.",
+    "parent": "wellbeing-review",
+    "public": false
+  },
+  {
+    "id": "099",
+    "key": "wellbeing-session",
+    "title": "My wellbeing session",
+    "group": "Wellbeing",
+    "description": "Session details, joining, rescheduling and cancellation.",
+    "parent": "wellbeing",
+    "public": false
+  },
+  {
+    "id": "100",
+    "key": "wellbeing-reschedule",
+    "title": "Reschedule wellbeing session",
+    "group": "Wellbeing",
+    "description": "Choose and confirm another session time.",
+    "parent": "wellbeing-session",
+    "public": false
+  },
+  {
+    "id": "101",
+    "key": "wellbeing-cancel",
+    "title": "Cancel wellbeing session",
+    "group": "Wellbeing",
+    "description": "Explicit cancellation and applicable demo terms.",
+    "parent": "wellbeing-session",
+    "public": false
+  },
+  {
+    "id": "102",
+    "key": "wellbeing-call",
+    "title": "Wellbeing video session",
+    "group": "Wellbeing",
+    "description": "Simulated online session with working end control.",
+    "parent": "wellbeing-session",
+    "public": false
+  },
+  {
+    "id": "103",
+    "key": "wellbeing-plan",
+    "title": "My wellbeing plan",
+    "group": "Wellbeing",
+    "description": "Personal goals and progress tracking.",
+    "parent": "wellbeing",
+    "public": false
+  },
+  {
+    "id": "104",
+    "key": "wellbeing-progress",
+    "title": "Wellbeing check-in",
+    "group": "Wellbeing",
+    "description": "Interactive progress scale and reflection.",
+    "parent": "wellbeing-plan",
+    "public": false
+  },
+  {
+    "id": "105",
+    "key": "shop",
+    "title": "Wellbeing Shop",
+    "group": "Wellbeing Shop",
+    "description": "Products nested under the Wellbeing service.",
+    "parent": "wellbeing",
+    "public": false
+  },
+  {
+    "id": "106",
+    "key": "product",
+    "title": "Product details",
+    "group": "Wellbeing Shop",
+    "description": "Product description, suitability note and basket action.",
+    "parent": "shop",
+    "public": false
+  },
+  {
+    "id": "107",
+    "key": "basket",
+    "title": "Basket",
+    "group": "Wellbeing Shop",
+    "description": "Editable quantities, removal and order total.",
+    "parent": "shop",
+    "public": false
+  },
+  {
+    "id": "108",
+    "key": "shop-delivery",
+    "title": "Delivery details",
+    "group": "Wellbeing Shop",
+    "description": "Delivery address entry and fulfilment choices.",
+    "parent": "basket",
+    "public": false
+  },
+  {
+    "id": "109",
+    "key": "shop-payment",
+    "title": "Shop payment",
+    "group": "Wellbeing Shop",
+    "description": "Prepared demo payment method.",
+    "parent": "shop-delivery",
+    "public": false
+  },
+  {
+    "id": "110",
+    "key": "shop-review",
+    "title": "Review shop order",
+    "group": "Wellbeing Shop",
+    "description": "Items, delivery and payment before placing order.",
+    "parent": "shop-payment",
+    "public": false
+  },
+  {
+    "id": "111",
+    "key": "shop-confirmed",
+    "title": "Order confirmed",
+    "group": "Wellbeing Shop",
+    "description": "Order reference, delivery estimate and tracking.",
+    "parent": "shop-review",
+    "public": false
+  },
+  {
+    "id": "112",
+    "key": "orders",
+    "title": "My orders",
+    "group": "Wellbeing Shop",
+    "description": "Order history and status.",
+    "parent": "shop",
+    "public": false
+  },
+  {
+    "id": "113",
+    "key": "order-detail",
+    "title": "Order details",
+    "group": "Wellbeing Shop",
+    "description": "Order lines, delivery, receipt and support actions.",
+    "parent": "orders",
+    "public": false
+  },
+  {
+    "id": "114",
+    "key": "order-tracking",
+    "title": "Order tracking",
+    "group": "Wellbeing Shop",
+    "description": "Fulfilment progress and delivery details.",
+    "parent": "order-detail",
+    "public": false
+  },
+  {
+    "id": "115",
+    "key": "return-request",
+    "title": "Request a return",
+    "group": "Wellbeing Shop",
+    "description": "Item selection and return reason without assuming eligibility.",
+    "parent": "order-detail",
+    "public": false
+  },
+  {
+    "id": "116",
+    "key": "return-confirmed",
+    "title": "Return request received",
+    "group": "Wellbeing Shop",
+    "description": "Return acknowledgement, not automatic refund.",
+    "parent": "return-request",
+    "public": false
+  },
+  {
+    "id": "117",
+    "key": "insurance",
+    "title": "Payment and Cover",
+    "group": "Payment and Cover",
+    "description": "Funding routes for services; no insurance product sales.",
+    "parent": "profile",
+    "public": false
+  },
+  {
+    "id": "118",
+    "key": "insurance-link",
+    "title": "Link a policy",
+    "group": "Payment and Cover",
+    "description": "Provider and policy reference verification form.",
+    "parent": "insurance",
+    "public": false
+  },
+  {
+    "id": "119",
+    "key": "insurance-verification",
+    "title": "Policy verification result",
+    "group": "Payment and Cover",
+    "description": "Successful linking, policy scope and next actions.",
+    "parent": "insurance-link",
+    "public": false
+  },
+  {
+    "id": "120",
+    "key": "insurance-policies",
+    "title": "My policies",
+    "group": "Payment and Cover",
+    "description": "Linked policy catalogue.",
+    "parent": "insurance",
+    "public": false
+  },
+  {
+    "id": "121",
+    "key": "insurance-policy",
+    "title": "Policy details",
+    "group": "Payment and Cover",
+    "description": "Policyholder, limits, documents and support.",
+    "parent": "insurance-policies",
+    "public": false
+  },
+  {
+    "id": "122",
+    "key": "insurance-documents",
+    "title": "Policy documents",
+    "group": "Payment and Cover",
+    "description": "Policy schedule, wording and key information with local download.",
+    "parent": "insurance-policy",
+    "public": false
+  },
+  {
+    "id": "123",
+    "key": "insurance-document",
+    "title": "Policy schedule",
+    "group": "Payment and Cover",
+    "description": "Sample policy schedule document.",
+    "parent": "insurance-documents",
+    "public": false
+  },
+  {
+    "id": "124",
+    "key": "insurance-wording",
+    "title": "Policy wording",
+    "group": "Payment and Cover",
+    "description": "Sample wording layout, without inventing binding terms.",
+    "parent": "insurance-documents",
+    "public": false
+  },
+  {
+    "id": "125",
+    "key": "insurance-information",
+    "title": "Insurance product information",
+    "group": "Payment and Cover",
+    "description": "Sample key information document layout.",
+    "parent": "insurance-documents",
+    "public": false
+  },
+  {
+    "id": "126",
+    "key": "insurance-cover",
+    "title": "Check service cover",
+    "group": "Payment and Cover",
+    "description": "Service-specific simulated cover check.",
+    "parent": "insurance",
+    "public": false
+  },
+  {
+    "id": "127",
+    "key": "insurance-cover-result",
+    "title": "Service cover result",
+    "group": "Payment and Cover",
+    "description": "Eligibility, authorisation or not-covered response with onward routes.",
+    "parent": "insurance-cover",
+    "public": false
+  },
+  {
+    "id": "128",
+    "key": "insurance-claims",
+    "title": "Claims & support",
+    "group": "Payment and Cover",
+    "description": "Claims status and provider-led claim initiation.",
+    "parent": "insurance",
+    "public": false
+  },
+  {
+    "id": "129",
+    "key": "insurance-claim-start",
+    "title": "Start claim enquiry",
+    "group": "Payment and Cover",
+    "description": "Claim category, description and demo evidence selector.",
+    "parent": "insurance-claims",
+    "public": false
+  },
+  {
+    "id": "130",
+    "key": "insurance-claim-received",
+    "title": "Claim enquiry received",
+    "group": "Payment and Cover",
+    "description": "Receipt with responsible provider and next step.",
+    "parent": "insurance-claim-start",
+    "public": false
+  },
+  {
+    "id": "131",
+    "key": "insurance-claim-detail",
+    "title": "Claim details",
+    "group": "Payment and Cover",
+    "description": "Claim timeline, information request and documents.",
+    "parent": "insurance-claims",
+    "public": false
+  },
+  {
+    "id": "132",
+    "key": "insurance-support",
+    "title": "Insurance support",
+    "group": "Payment and Cover",
+    "description": "Policy, claims and complaints enquiry routes.",
+    "parent": "insurance",
+    "public": false
+  },
+  {
+    "id": "133",
+    "key": "insurance-support-confirmed",
+    "title": "Insurance support received",
+    "group": "Payment and Cover",
+    "description": "Insurance enquiry receipt and provider responsibility.",
+    "parent": "insurance-support",
+    "public": false
+  },
+  {
+    "id": "134",
+    "key": "payment-failed",
+    "title": "Payment unsuccessful",
+    "group": "Recovery states",
+    "description": "Recoverable payment failure with retry and funding change.",
+    "parent": "gp-payment",
+    "public": false
+  },
+  {
+    "id": "135",
+    "key": "no-appointments",
+    "title": "No appointments available",
+    "group": "Recovery states",
+    "description": "Empty availability and alternative selection.",
+    "parent": "gp-slots",
+    "public": false
+  },
+  {
+    "id": "136",
+    "key": "connection-help",
+    "title": "Connection help",
+    "group": "Recovery states",
+    "description": "Video recovery and rescheduling routes.",
+    "parent": "gp-waiting",
+    "public": false
+  },
+  {
+    "id": "137",
+    "key": "empty-records",
+    "title": "No records yet",
+    "group": "Recovery states",
+    "description": "New account health-record state.",
+    "parent": "records",
+    "public": false
+  },
+  {
+    "id": "138",
+    "key": "policy-not-found",
+    "title": "Policy not verified",
+    "group": "Recovery states",
+    "description": "Unsuccessful policy link with correction and support.",
+    "parent": "insurance-link",
+    "public": false
+  },
+  {
+    "id": "139",
+    "key": "policy-expired",
+    "title": "Policy expired",
+    "group": "Recovery states",
+    "description": "Expired cover warning and renewal enquiry.",
+    "parent": "insurance-policy",
+    "public": false
+  },
+  {
+    "id": "140",
+    "key": "service-unavailable",
+    "title": "Service temporarily unavailable",
+    "group": "Recovery states",
+    "description": "Transient service failure and retry.",
+    "parent": "home",
+    "public": false
+  },
+  {
+    "id": "141",
+    "key": "session-ended",
+    "title": "Session ended",
+    "group": "Recovery states",
+    "description": "Reauthentication route without losing conceptual user journey.",
+    "parent": "sign-in",
+    "public": true
+  },
+  {
+    "id": "142",
+    "key": "tests",
+    "title": "Tests and Health Checks",
+    "group": "Tests and Health Checks",
+    "description": "Fourth service pillar: five clinical categories and results access.",
+    "parent": "home",
+    "public": false
+  },
+  {
+    "id": "143",
+    "key": "general-check",
+    "title": "General Health Check",
+    "group": "Tests and Health Checks",
+    "description": "Assessment-led health check, with scope agreed before booking.",
+    "parent": "tests",
+    "public": false
+  },
+  {
+    "id": "144",
+    "key": "metabolic-check",
+    "title": "Diabetes & Cholesterol",
+    "group": "Tests and Health Checks",
+    "description": "Metabolic testing with clinician-selected tests.",
+    "parent": "tests",
+    "public": false
+  },
+  {
+    "id": "145",
+    "key": "blood-urine",
+    "title": "Blood & Urine Tests",
+    "group": "Tests and Health Checks",
+    "description": "Clinician-selected laboratory testing, not indiscriminate panels.",
+    "parent": "tests",
+    "public": false
+  },
+  {
+    "id": "146",
+    "key": "heart-breathing",
+    "title": "Heart & Breathing",
+    "group": "Tests and Health Checks",
+    "description": "Clinical assessment before ECG or breathing tests.",
+    "parent": "tests",
+    "public": false
+  },
+  {
+    "id": "147",
+    "key": "sexual-health",
+    "title": "Paid Sexual Health Check",
+    "group": "Tests and Health Checks",
+    "description": "A separate paid adult service with confidentiality and result-review information.",
+    "parent": "tests",
+    "public": false
+  },
+  {
+    "id": "148",
+    "key": "test-intake",
+    "title": "Suitability & safety",
+    "group": "Tests and Health Checks",
+    "description": "Age and urgent-support routing before routine sample collection.",
+    "parent": "tests",
+    "public": false
+  },
+  {
+    "id": "149",
+    "key": "test-preferences",
+    "title": "Discreet contact preferences",
+    "group": "Tests and Health Checks",
+    "description": "Result notification channel and callback permission.",
+    "parent": "test-intake",
+    "public": false
+  },
+  {
+    "id": "150",
+    "key": "test-slot",
+    "title": "Choose sample appointment",
+    "group": "Tests and Health Checks",
+    "description": "Illustrative sample-collection date and time.",
+    "parent": "test-preferences",
+    "public": false
+  },
+  {
+    "id": "151",
+    "key": "test-funding",
+    "title": "Choose test payment route",
+    "group": "Tests and Health Checks",
+    "description": "Self-pay and pending-benefit routes; no automatic insurance approval.",
+    "parent": "test-slot",
+    "public": false
+  },
+  {
+    "id": "152",
+    "key": "test-review",
+    "title": "Review test booking",
+    "group": "Tests and Health Checks",
+    "description": "Quote approval and pending funding are explicit.",
+    "parent": "test-funding",
+    "public": false
+  },
+  {
+    "id": "153",
+    "key": "test-payment",
+    "title": "Test payment preview",
+    "group": "Tests and Health Checks",
+    "description": "No card collection or charge; fee approval required for live flow.",
+    "parent": "test-review",
+    "public": false
+  },
+  {
+    "id": "154",
+    "key": "test-confirmed",
+    "title": "Test appointment details",
+    "group": "Tests and Health Checks",
+    "description": "Demonstration booking linked to preparation, status and cancellation.",
+    "parent": "visits",
+    "public": false
+  },
+  {
+    "id": "155",
+    "key": "test-preparation",
+    "title": "Preparing for your test",
+    "group": "Tests and Health Checks",
+    "description": "Test-specific instructions without blanket fasting requirements.",
+    "parent": "test-confirmed",
+    "public": false
+  },
+  {
+    "id": "156",
+    "key": "test-tracker",
+    "title": "Sample & results tracker",
+    "group": "Tests and Health Checks",
+    "description": "Collection, lab and clinical review are separate states.",
+    "parent": "tests",
+    "public": false
+  },
+  {
+    "id": "157",
+    "key": "test-results",
+    "title": "Reviewed test results",
+    "group": "Tests and Health Checks",
+    "description": "Secure example results overview and clinical follow-up.",
+    "parent": "test-tracker",
+    "public": false
+  },
+  {
+    "id": "158",
+    "key": "test-result-detail",
+    "title": "Sexual health result detail",
+    "group": "Tests and Health Checks",
+    "description": "Negative-result example avoids implying a conclusive all-clear.",
+    "parent": "test-results",
+    "public": false
+  },
+  {
+    "id": "159",
+    "key": "test-action-result",
+    "title": "Result needing follow-up",
+    "group": "Tests and Health Checks",
+    "description": "Clinician contact before diagnosis or treatment claims.",
+    "parent": "test-results",
+    "public": false
+  },
+  {
+    "id": "160",
+    "key": "test-followup",
+    "title": "Results follow-up request",
+    "group": "Tests and Health Checks",
+    "description": "Follow-up request with no automatic prescription or booking.",
+    "parent": "test-results",
+    "public": false
+  },
+  {
+    "id": "161",
+    "key": "test-followup-received",
+    "title": "Follow-up request received",
+    "group": "Tests and Health Checks",
+    "description": "Receipt of a simulated support request.",
+    "parent": "test-followup",
+    "public": false
+  },
+  {
+    "id": "162",
+    "key": "test-delayed",
+    "title": "Results delayed",
+    "group": "Tests and Health Checks",
+    "description": "Delay handling and contact route.",
+    "parent": "test-tracker",
+    "public": false
+  },
+  {
+    "id": "163",
+    "key": "test-repeat",
+    "title": "Repeat sample required",
+    "group": "Tests and Health Checks",
+    "description": "Sample quality failure is not treated as a diagnosis.",
+    "parent": "test-tracker",
+    "public": false
+  },
+  {
+    "id": "164",
+    "key": "test-urgent",
+    "title": "Clinical support before testing",
+    "group": "Tests and Health Checks",
+    "description": "Safety route for symptoms, exposure or emergency concerns.",
+    "parent": "sexual-health",
+    "public": false
+  },
+  {
+    "id": "165",
+    "key": "test-age",
+    "title": "Under-18 support",
+    "group": "Tests and Health Checks",
+    "description": "Adult-only service boundary and appropriate signposting.",
+    "parent": "tests",
+    "public": false
+  },
+  {
+    "id": "166",
+    "key": "test-privacy",
+    "title": "Testing privacy & consent",
+    "group": "Tests and Health Checks",
+    "description": "Discreet communications with limits on confidentiality explained.",
+    "parent": "sexual-health",
+    "public": false
+  },
+  {
+    "id": "167",
+    "key": "test-cancel",
+    "title": "Cancel test appointment",
+    "group": "Tests and Health Checks",
+    "description": "Explicit demo cancellation with real-policy placeholder.",
+    "parent": "test-confirmed",
+    "public": false
+  },
+  {
+    "id": "168",
+    "key": "test-cancelled",
+    "title": "Test cancellation confirmed",
+    "group": "Tests and Health Checks",
+    "description": "Cancelled appointment removed from upcoming visits.",
+    "parent": "tests",
+    "public": false
+  },
+  {
+    "id": "169",
+    "key": "reimbursement",
+    "title": "Pay and claim back",
+    "group": "Payment and Cover",
+    "description": "Receipt and insurer-claim route with no guarantee of reimbursement.",
+    "parent": "insurance",
+    "public": false
+  },
+  {
+    "id": "170",
+    "key": "test-receipt",
+    "title": "Sample test receipt",
+    "group": "Payment and Cover",
+    "description": "Demonstration invoice layout without invented prices.",
+    "parent": "reimbursement",
+    "public": false
+  },
+  {
+    "id": "171",
+    "key": "professional-records",
+    "title": "Professional record updates",
+    "group": "Health records",
+    "description": "Released records received from the Professional Portal; same fictional patient ID.",
+    "parent": "records",
+    "public": false
+  }
+]

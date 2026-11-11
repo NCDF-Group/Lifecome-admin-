@@ -1,0 +1,82 @@
+<div class="prototype">
+<b>LIFECOME HEALTH · PROFESSIONAL PORTAL SCREEN</b>
+<a href="/?role=doctor#rx-new">Open interactive screen</a>
+</div>
+<main class="content">
+<div class="pagehead">
+<div>
+<div class="eyebrow">WORKSPACE</div>
+<h1>Draft a prescription</h1>
+<p class="sub">A simulated prescribing workflow; no real medicine is selected.</p>
+</div>
+<div class="actions">
+</div>
+</div>
+<div class="patientbar">
+<span class="avatar">AT</span>
+<div>
+<h2>Alex Taylor</h2>
+<small>LC-DEMO-1001 &nbsp; · &nbsp; DOB 16 April 1984 &nbsp; · &nbsp; 42 years</small>
+</div>
+<div class="tags">
+<span class="tag gray">Fictional patient</span>
+<span class="tag amber">Penicillin — reported rash</span>
+</div>
+</div>
+<div class="banner amber">
+<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0 M12 11v6 M12 7v.1"/>
+</svg>
+<span>Penicillin — reported rash · review this before proceeding.</span>
+</div>
+<section class="card">
+<header class="card-head">
+<h2>Prescription details</h2>
+</header>
+<div class="card-body">
+<form data-form="rx-draft">
+<div class="fields">
+<label class="field">
+<span>Medicine</span>
+<select name="medicine" required>
+<option >DEMO MEDICINE — not a real drug</option>
+</select>
+</label>
+<label class="field">
+<span>Form / strength</span>
+<input name="strength" value="Illustrative only — no clinical strength" type="text" required >
+</label>
+<label class="field">
+<span>Directions</span>
+<input name="directions" value="Not for administration — workflow demonstration" type="text" required >
+</label>
+<label class="field">
+<span>Quantity</span>
+<input name="quantity" value="Demo quantity only" type="text" required >
+</label>
+</div>
+<label class="field">
+<span>Clinical indication and rationale</span>
+<textarea name="indication" required rows="3">Document the clinical indication and assessment before prescribing.</textarea>
+</label>
+<label class="field">
+<span>Monitoring and review plan</span>
+<textarea name="monitoring" required rows="3">Confirm appropriate monitoring and follow-up with the patient.</textarea>
+</label>
+<label class="field">
+<span>Fulfilment route</span>
+<select name="pharmacy" required>
+<option >Example partner pharmacy — not connected</option>
+</select>
+</label>
+<div class="footer-actions">
+<a class="btn ghost" href="#prescriptions">Back</a>
+<button class="btn" type="submit">Review safety checks<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M4 12h16 m-6-6 6 6-6 6"/>
+</svg>
+</button>
+</div>
+</form>
+</div>
+</section>
+</main>

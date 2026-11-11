@@ -1,7 +1,31 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  poweredByHeader: false,
+  output: "standalone",
+  async redirects() {
+    return [
+      // Links from the original static package keep working.
+      { source: "/index.html", destination: "/", permanent: true },
+      { source: "/screen-board.html", destination: "/screen-board", permanent: true },
+      { source: "/integration.html", destination: "/integration", permanent: true },
+      { source: "/patient-app.html", destination: "/patient-app", permanent: true },
+      { source: "/screens/:slug.html", destination: "/screens/:slug", permanent: true },
+      // The bundled patient app is a static site; its relative assets need the folder URL.
+      { source: "/patient", destination: "/patient/index.html", permanent: false },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "same-origin" },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -1,0 +1,172 @@
+Screen ID,Area,Screen,Route,Parent,Purpose,Individual file
+001,Start & account,Welcome,#welcome,welcome,The approved four-service entry point.,screens/001-welcome.html
+002,Start & account,Log in,#sign-in,welcome,Demo sign-in with a prepared account.,screens/002-sign-in.html
+003,Start & account,Create account,#sign-up,welcome,"Account creation, consent and email verification entry.",screens/003-sign-up.html
+004,Start & account,Verify email,#verify,sign-up,Verification code and resend state.,screens/004-verify.html
+005,Start & account,Forgot password,#forgot-password,sign-in,Password reset request.,screens/005-forgot-password.html
+006,Start & account,Set new password,#reset-password,sign-in,New password and confirmation validation.,screens/006-reset-password.html
+007,Start & account,Complete profile,#profile-setup,verify,Basic patient details and accessibility preferences.,screens/007-profile-setup.html
+008,Home & navigation,Home,#home,home,"Four services, continuing care and shared quick actions.",screens/008-home.html
+009,Home & navigation,Visits,#visits,home,Appointments and care visits across the four services.,screens/009-visits.html
+010,Home & navigation,Appointment details,#visit-detail,visits,Manage a scheduled GP appointment.,screens/010-visit-detail.html
+011,Home & navigation,Reschedule appointment,#reschedule,visit-detail,Select a replacement appointment time.,screens/011-reschedule.html
+012,Home & navigation,Cancel appointment,#cancel-visit,visit-detail,"Cancellation reason, terms and explicit confirmation.",screens/012-cancel-visit.html
+013,Home & navigation,Cancellation confirmed,#cancellation-confirmed,visits,Cancellation outcome and next actions.,screens/013-cancellation-confirmed.html
+014,Messages,Inbox,#messages,home,"Shared messaging for clinical, care, wellbeing and support teams.",screens/014-messages.html
+015,Messages,GP conversation,#message-thread,messages,Send a local demo message and receive a sample acknowledgement.,screens/015-message-thread.html
+016,Messages,Care conversation,#care-message,messages,Care coordination message thread.,screens/016-care-message.html
+017,Messages,Wellbeing conversation,#wellbeing-message,messages,Wellbeing practitioner message thread.,screens/017-wellbeing-message.html
+018,Messages,New message,#new-message,messages,"Choose team, subject and message.",screens/018-new-message.html
+019,Account & benefits,Profile,#profile,home,"Shared identity, funding, preferences and support.",screens/019-profile.html
+020,Account & benefits,Personal details,#personal-details,profile,Editable profile details.,screens/020-personal-details.html
+021,Account & benefits,Health profile,#medical-history,profile,Patient-provided medical history.,screens/021-medical-history.html
+022,Account & benefits,Membership & benefits,#benefits,profile,"Separate membership, employer entitlements and insurance cover.",screens/022-benefits.html
+023,Account & benefits,Membership options,#membership,benefits,Membership presentation without inventing approved plan terms.,screens/023-membership.html
+024,Account & benefits,Membership details,#membership-detail,membership,Membership entitlements and demo activation.,screens/024-membership-detail.html
+025,Account & benefits,Activate employer access,#employer-access,benefits,Verify employer benefit code.,screens/025-employer-access.html
+026,Account & benefits,Benefit activated,#membership-activated,benefits,Activation confirmation and booking entry.,screens/026-membership-activated.html
+027,Account & benefits,Payment methods,#payment-methods,profile,"Demo card display, add and remove actions.",screens/027-payment-methods.html
+028,Account & benefits,Privacy & permissions,#privacy,profile,Granular sample sharing and marketing controls.,screens/028-privacy.html
+029,Account & benefits,Notifications,#notifications,profile,Appointment and account notification preferences.,screens/029-notifications.html
+030,Help & legal,Help & support,#help,profile,FAQs and support routes.,screens/030-help.html
+031,Help & legal,Contact support,#support-request,help,Support ticket with subject and description.,screens/031-support-request.html
+032,Help & legal,Support received,#support-confirmed,help,Support request receipt and messaging route.,screens/032-support-confirmed.html
+033,Help & legal,Urgent help,#urgent-help,help,"Clear emergency signposting, separate from routine services.",screens/033-urgent-help.html
+034,Help & legal,Terms of use,#terms,help,Prototype terms page and service-specific agreements.,screens/034-terms.html
+035,Help & legal,Privacy notice,#privacy-notice,help,Transparent explanation of prototype data handling.,screens/035-privacy-notice.html
+036,Help & legal,Accessibility,#accessibility,profile,Working text-size and motion controls.,screens/036-accessibility.html
+037,GP,GP services,#gp,home,Online and physical GP appointments with Menopause Care nested here.,screens/037-gp.html
+038,GP,Appointment eligibility,#gp-eligibility,gp,"Location, age and non-emergency check before booking.",screens/038-gp-eligibility.html
+039,GP,Reason for appointment,#gp-reason,gp-eligibility,Select the appointment topic.,screens/039-gp-reason.html
+040,GP,Choose a GP,#gp-doctors,gp-reason,Available demonstration clinicians.,screens/040-gp-doctors.html
+041,GP,GP profile · Maya,#gp-doctor,gp-doctors,"Clinician profile, scope and booking action.",screens/041-gp-doctor.html
+042,GP,GP profile · James,#gp-doctor-james,gp-doctors,Alternative clinician profile for the selection journey.,screens/042-gp-doctor-james.html
+043,GP,Find a clinic,#clinics,gp-eligibility,Clinic list and location search.,screens/043-clinics.html
+044,GP,Clinic details,#clinic-detail,clinics,"Location, facilities and physical appointment entry.",screens/044-clinic-detail.html
+045,GP,Choose date & time,#gp-slots,gp-doctor,GP appointment slot selection.,screens/045-gp-slots.html
+046,GP,Pre-appointment form,#gp-intake,gp-slots,"Reason, history and consent before the consultation.",screens/046-gp-intake.html
+047,GP,Review GP booking,#gp-review,gp-intake,"Appointment, funding route and final price review.",screens/047-gp-review.html
+048,GP,GP payment,#gp-payment,gp-review,Simulated payment and final booking confirmation.,screens/048-gp-payment.html
+049,GP,GP booking confirmed,#gp-confirmed,gp-payment,"Booking reference, summary and next steps.",screens/049-gp-confirmed.html
+050,GP,Video waiting room,#gp-waiting,visit-detail,Pre-call checks and simulated joining.,screens/050-gp-waiting.html
+051,GP,Video consultation,#gp-call,gp-waiting,"Simulated consultation with microphone, camera and end-call controls.",screens/051-gp-call.html
+052,GP,Consultation summary,#gp-summary,visits,Post-visit notes and follow-up entry.,screens/052-gp-summary.html
+053,GP,GP care plan,#gp-careplan,gp,Ongoing actions following a GP consultation.,screens/053-gp-careplan.html
+054,Health records,Health records,#records,home,"Central hub for GP records, medication, referrals and results.",screens/054-records.html
+055,Health records,Consultation record,#record-detail,records,Readable sample consultation document and download.,screens/055-record-detail.html
+056,Health records,Prescriptions,#prescriptions,records,Prescription list and status.,screens/056-prescriptions.html
+057,Health records,Prescription details,#prescription-detail,prescriptions,"Prescription metadata, pharmacy and sample document.",screens/057-prescription-detail.html
+058,Health records,Referrals,#referrals,records,Referral list and handoff status.,screens/058-referrals.html
+059,Health records,Referral details,#referral-detail,referrals,Referral document and booking responsibilities.,screens/059-referral-detail.html
+060,Health records,Test results,#results,records,Result list with review status.,screens/060-results.html
+061,Health records,Result details,#result-detail,results,Clinician-reviewed result document without fabricated medical findings.,screens/061-result-detail.html
+062,Menopause Care,Menopause Care,#menopause,gp,Menopause service hub within GP.,screens/062-menopause.html
+063,Menopause Care,Menopause assessment,#menopause-assessment,menopause,Symptom topics and personal priorities.,screens/063-menopause-assessment.html
+064,Menopause Care,Menopause health history,#menopause-history,menopause-assessment,Relevant history for clinician review.,screens/064-menopause-history.html
+065,Menopause Care,Review menopause assessment,#menopause-assessment-review,menopause-history,Review entered assessment before saving.,screens/065-menopause-assessment-review.html
+066,Menopause Care,Menopause appointment type,#menopause-booking,menopause,Online or clinic menopause appointment with shared GP booking.,screens/066-menopause-booking.html
+067,Menopause Care,Menopause care plan,#menopause-plan,menopause,"Clinician-led plan, HRT discussion and follow-up links.",screens/067-menopause-plan.html
+068,Menopause Care,Menopause review check-in,#menopause-review,menopause-plan,Follow-up intake before booking another GP appointment.,screens/068-menopause-review.html
+069,Care,Professional Care,#care,home,Professional care hub with request and ongoing care entry points.,screens/069-care.html
+070,Care,Care service catalogue,#care-services,care,Care categories organised around customer needs.,screens/070-care-services.html
+071,Care,Personal care details,#care-personal,care-services,Personal care scope and request entry.,screens/071-care-personal.html
+072,Care,Help at home details,#care-home,care-services,Practical support description.,screens/072-care-home.html
+073,Care,Companionship details,#care-companionship,care-services,Social support service description.,screens/073-care-companionship.html
+074,Care,Respite support details,#care-respite,care-services,Temporary care support service description.,screens/074-care-respite.html
+075,Care,Care request · person,#care-request-person,care,Identify care recipient and relationship.,screens/075-care-request-person.html
+076,Care,Care request · needs,#care-request-needs,care-request-person,Requested support and preferences.,screens/076-care-request-needs.html
+077,Care,Care request · schedule,#care-request-schedule,care-request-needs,Preferred care timing and contact route.,screens/077-care-request-schedule.html
+078,Care,Review care request,#care-request-review,care-request-schedule,Review request before assessment enquiry.,screens/078-care-request-review.html
+079,Care,Care request received,#care-submitted,care-request-review,Assessment request confirmation.,screens/079-care-submitted.html
+080,Care,Care request status,#care-status,care,"Assessment, proposal and acceptance progress.",screens/080-care-status.html
+081,Care,Care assessment,#care-assessment,care-status,Assessment appointment details and preparation.,screens/081-care-assessment.html
+082,Care,Care proposal,#care-proposal,care-status,"Proposed care package, schedule and transparent illustrative costs.",screens/082-care-proposal.html
+083,Care,Care agreement,#care-agreement,care-proposal,Explicit acceptance of a reviewed care proposal.,screens/083-care-agreement.html
+084,Care,My care plan,#care-plan,care,"Agreed professional support, routines and care actions.",screens/084-care-plan.html
+085,Care,Care visits,#care-visits,care,Scheduled professional care visits.,screens/085-care-visits.html
+086,Care,Care visit details,#care-visit-detail,care-visits,Visit information and change request route.,screens/086-care-visit-detail.html
+087,Care,Completed care visit,#care-visit-note,care-visits,Care visit completion and sample notes.,screens/087-care-visit-note.html
+088,Care,My care team,#care-team,care,Care coordinator and professional profiles.,screens/088-care-team.html
+089,Care,Request care changes,#care-change,care-plan,Change request without silently cancelling agreed care.,screens/089-care-change.html
+090,Care,Care change received,#care-change-confirmed,care-change,Change request acknowledgement and coordinator follow-up.,screens/090-care-change-confirmed.html
+091,Wellbeing,Wellbeing hub,#wellbeing,home,"Coaching, everyday support and Wellbeing Shop.",screens/091-wellbeing.html
+092,Wellbeing,Lifestyle coaching,#wellbeing-lifestyle,wellbeing,Service detail and session booking entry.,screens/092-wellbeing-lifestyle.html
+093,Wellbeing,Healthy eating support,#wellbeing-nutrition,wellbeing,Education session and clear clinical referral route.,screens/093-wellbeing-nutrition.html
+094,Wellbeing,Stress & relaxation,#wellbeing-stress,wellbeing,General wellbeing session with urgent support route.,screens/094-wellbeing-stress.html
+095,Wellbeing,Wellbeing practitioner,#wellbeing-practitioner,wellbeing,Practitioner profile before selecting a session.,screens/095-wellbeing-practitioner.html
+096,Wellbeing,Choose wellbeing session,#wellbeing-slots,wellbeing-practitioner,Session date and time selection.,screens/096-wellbeing-slots.html
+097,Wellbeing,Review wellbeing booking,#wellbeing-review,wellbeing-slots,"Goals, session details and payment review.",screens/097-wellbeing-review.html
+098,Wellbeing,Wellbeing booking confirmed,#wellbeing-confirmed,wellbeing-review,Session confirmation and next step.,screens/098-wellbeing-confirmed.html
+099,Wellbeing,My wellbeing session,#wellbeing-session,wellbeing,"Session details, joining, rescheduling and cancellation.",screens/099-wellbeing-session.html
+100,Wellbeing,Reschedule wellbeing session,#wellbeing-reschedule,wellbeing-session,Choose and confirm another session time.,screens/100-wellbeing-reschedule.html
+101,Wellbeing,Cancel wellbeing session,#wellbeing-cancel,wellbeing-session,Explicit cancellation and applicable demo terms.,screens/101-wellbeing-cancel.html
+102,Wellbeing,Wellbeing video session,#wellbeing-call,wellbeing-session,Simulated online session with working end control.,screens/102-wellbeing-call.html
+103,Wellbeing,My wellbeing plan,#wellbeing-plan,wellbeing,Personal goals and progress tracking.,screens/103-wellbeing-plan.html
+104,Wellbeing,Wellbeing check-in,#wellbeing-progress,wellbeing-plan,Interactive progress scale and reflection.,screens/104-wellbeing-progress.html
+105,Wellbeing Shop,Wellbeing Shop,#shop,wellbeing,Products nested under the Wellbeing service.,screens/105-shop.html
+106,Wellbeing Shop,Product details,#product,shop,"Product description, suitability note and basket action.",screens/106-product.html
+107,Wellbeing Shop,Basket,#basket,shop,"Editable quantities, removal and order total.",screens/107-basket.html
+108,Wellbeing Shop,Delivery details,#shop-delivery,basket,Delivery address entry and fulfilment choices.,screens/108-shop-delivery.html
+109,Wellbeing Shop,Shop payment,#shop-payment,shop-delivery,Prepared demo payment method.,screens/109-shop-payment.html
+110,Wellbeing Shop,Review shop order,#shop-review,shop-payment,"Items, delivery and payment before placing order.",screens/110-shop-review.html
+111,Wellbeing Shop,Order confirmed,#shop-confirmed,shop-review,"Order reference, delivery estimate and tracking.",screens/111-shop-confirmed.html
+112,Wellbeing Shop,My orders,#orders,shop,Order history and status.,screens/112-orders.html
+113,Wellbeing Shop,Order details,#order-detail,orders,"Order lines, delivery, receipt and support actions.",screens/113-order-detail.html
+114,Wellbeing Shop,Order tracking,#order-tracking,order-detail,Fulfilment progress and delivery details.,screens/114-order-tracking.html
+115,Wellbeing Shop,Request a return,#return-request,order-detail,Item selection and return reason without assuming eligibility.,screens/115-return-request.html
+116,Wellbeing Shop,Return request received,#return-confirmed,return-request,"Return acknowledgement, not automatic refund.",screens/116-return-confirmed.html
+117,Payment and Cover,Payment and Cover,#insurance,profile,Funding routes for services; no insurance product sales.,screens/117-insurance.html
+118,Payment and Cover,Link a policy,#insurance-link,insurance,Provider and policy reference verification form.,screens/118-insurance-link.html
+119,Payment and Cover,Policy verification result,#insurance-verification,insurance-link,"Successful linking, policy scope and next actions.",screens/119-insurance-verification.html
+120,Payment and Cover,My policies,#insurance-policies,insurance,Linked policy catalogue.,screens/120-insurance-policies.html
+121,Payment and Cover,Policy details,#insurance-policy,insurance-policies,"Policyholder, limits, documents and support.",screens/121-insurance-policy.html
+122,Payment and Cover,Policy documents,#insurance-documents,insurance-policy,"Policy schedule, wording and key information with local download.",screens/122-insurance-documents.html
+123,Payment and Cover,Policy schedule,#insurance-document,insurance-documents,Sample policy schedule document.,screens/123-insurance-document.html
+124,Payment and Cover,Policy wording,#insurance-wording,insurance-documents,"Sample wording layout, without inventing binding terms.",screens/124-insurance-wording.html
+125,Payment and Cover,Insurance product information,#insurance-information,insurance-documents,Sample key information document layout.,screens/125-insurance-information.html
+126,Payment and Cover,Check service cover,#insurance-cover,insurance,Service-specific simulated cover check.,screens/126-insurance-cover.html
+127,Payment and Cover,Service cover result,#insurance-cover-result,insurance-cover,"Eligibility, authorisation or not-covered response with onward routes.",screens/127-insurance-cover-result.html
+128,Payment and Cover,Claims & support,#insurance-claims,insurance,Claims status and provider-led claim initiation.,screens/128-insurance-claims.html
+129,Payment and Cover,Start claim enquiry,#insurance-claim-start,insurance-claims,"Claim category, description and demo evidence selector.",screens/129-insurance-claim-start.html
+130,Payment and Cover,Claim enquiry received,#insurance-claim-received,insurance-claim-start,Receipt with responsible provider and next step.,screens/130-insurance-claim-received.html
+131,Payment and Cover,Claim details,#insurance-claim-detail,insurance-claims,"Claim timeline, information request and documents.",screens/131-insurance-claim-detail.html
+132,Payment and Cover,Insurance support,#insurance-support,insurance,"Policy, claims and complaints enquiry routes.",screens/132-insurance-support.html
+133,Payment and Cover,Insurance support received,#insurance-support-confirmed,insurance-support,Insurance enquiry receipt and provider responsibility.,screens/133-insurance-support-confirmed.html
+134,Recovery states,Payment unsuccessful,#payment-failed,gp-payment,Recoverable payment failure with retry and funding change.,screens/134-payment-failed.html
+135,Recovery states,No appointments available,#no-appointments,gp-slots,Empty availability and alternative selection.,screens/135-no-appointments.html
+136,Recovery states,Connection help,#connection-help,gp-waiting,Video recovery and rescheduling routes.,screens/136-connection-help.html
+137,Recovery states,No records yet,#empty-records,records,New account health-record state.,screens/137-empty-records.html
+138,Recovery states,Policy not verified,#policy-not-found,insurance-link,Unsuccessful policy link with correction and support.,screens/138-policy-not-found.html
+139,Recovery states,Policy expired,#policy-expired,insurance-policy,Expired cover warning and renewal enquiry.,screens/139-policy-expired.html
+140,Recovery states,Service temporarily unavailable,#service-unavailable,home,Transient service failure and retry.,screens/140-service-unavailable.html
+141,Recovery states,Session ended,#session-ended,sign-in,Reauthentication route without losing conceptual user journey.,screens/141-session-ended.html
+142,Tests and Health Checks,Tests and Health Checks,#tests,home,Fourth service pillar: five clinical categories and results access.,screens/142-tests.html
+143,Tests and Health Checks,General Health Check,#general-check,tests,"Assessment-led health check, with scope agreed before booking.",screens/143-general-check.html
+144,Tests and Health Checks,Diabetes & Cholesterol,#metabolic-check,tests,Metabolic testing with clinician-selected tests.,screens/144-metabolic-check.html
+145,Tests and Health Checks,Blood & Urine Tests,#blood-urine,tests,"Clinician-selected laboratory testing, not indiscriminate panels.",screens/145-blood-urine.html
+146,Tests and Health Checks,Heart & Breathing,#heart-breathing,tests,Clinical assessment before ECG or breathing tests.,screens/146-heart-breathing.html
+147,Tests and Health Checks,Paid Sexual Health Check,#sexual-health,tests,A separate paid adult service with confidentiality and result-review information.,screens/147-sexual-health.html
+148,Tests and Health Checks,Suitability & safety,#test-intake,tests,Age and urgent-support routing before routine sample collection.,screens/148-test-intake.html
+149,Tests and Health Checks,Discreet contact preferences,#test-preferences,test-intake,Result notification channel and callback permission.,screens/149-test-preferences.html
+150,Tests and Health Checks,Choose sample appointment,#test-slot,test-preferences,Illustrative sample-collection date and time.,screens/150-test-slot.html
+151,Tests and Health Checks,Choose test payment route,#test-funding,test-slot,Self-pay and pending-benefit routes; no automatic insurance approval.,screens/151-test-funding.html
+152,Tests and Health Checks,Review test booking,#test-review,test-funding,Quote approval and pending funding are explicit.,screens/152-test-review.html
+153,Tests and Health Checks,Test payment preview,#test-payment,test-review,No card collection or charge; fee approval required for live flow.,screens/153-test-payment.html
+154,Tests and Health Checks,Test appointment details,#test-confirmed,visits,"Demonstration booking linked to preparation, status and cancellation.",screens/154-test-confirmed.html
+155,Tests and Health Checks,Preparing for your test,#test-preparation,test-confirmed,Test-specific instructions without blanket fasting requirements.,screens/155-test-preparation.html
+156,Tests and Health Checks,Sample & results tracker,#test-tracker,tests,"Collection, lab and clinical review are separate states.",screens/156-test-tracker.html
+157,Tests and Health Checks,Reviewed test results,#test-results,test-tracker,Secure example results overview and clinical follow-up.,screens/157-test-results.html
+158,Tests and Health Checks,Sexual health result detail,#test-result-detail,test-results,Negative-result example avoids implying a conclusive all-clear.,screens/158-test-result-detail.html
+159,Tests and Health Checks,Result needing follow-up,#test-action-result,test-results,Clinician contact before diagnosis or treatment claims.,screens/159-test-action-result.html
+160,Tests and Health Checks,Results follow-up request,#test-followup,test-results,Follow-up request with no automatic prescription or booking.,screens/160-test-followup.html
+161,Tests and Health Checks,Follow-up request received,#test-followup-received,test-followup,Receipt of a simulated support request.,screens/161-test-followup-received.html
+162,Tests and Health Checks,Results delayed,#test-delayed,test-tracker,Delay handling and contact route.,screens/162-test-delayed.html
+163,Tests and Health Checks,Repeat sample required,#test-repeat,test-tracker,Sample quality failure is not treated as a diagnosis.,screens/163-test-repeat.html
+164,Tests and Health Checks,Clinical support before testing,#test-urgent,sexual-health,"Safety route for symptoms, exposure or emergency concerns.",screens/164-test-urgent.html
+165,Tests and Health Checks,Under-18 support,#test-age,tests,Adult-only service boundary and appropriate signposting.,screens/165-test-age.html
+166,Tests and Health Checks,Testing privacy & consent,#test-privacy,sexual-health,Discreet communications with limits on confidentiality explained.,screens/166-test-privacy.html
+167,Tests and Health Checks,Cancel test appointment,#test-cancel,test-confirmed,Explicit demo cancellation with real-policy placeholder.,screens/167-test-cancel.html
+168,Tests and Health Checks,Test cancellation confirmed,#test-cancelled,tests,Cancelled appointment removed from upcoming visits.,screens/168-test-cancelled.html
+169,Payment and Cover,Pay and claim back,#reimbursement,insurance,Receipt and insurer-claim route with no guarantee of reimbursement.,screens/169-reimbursement.html
+170,Payment and Cover,Sample test receipt,#test-receipt,reimbursement,Demonstration invoice layout without invented prices.,screens/170-test-receipt.html
+171,Health records,Professional record updates,#professional-records,records,Released records received from the Professional Portal; same fictional patient ID.,screens/171-professional-records.html

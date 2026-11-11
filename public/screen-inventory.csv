@@ -1,0 +1,57 @@
+ID,Screen,Area,Route,Roles
+1,Today’s overview,Workspace,#dashboard,"doctor, nurse, care, wellbeing, manager, admin"
+2,Appointments,Workspace,#schedule,"doctor, nurse, care, wellbeing, manager, admin"
+3,Appointment details,Workspace,#appointment,"doctor, nurse, care, wellbeing, manager, admin"
+4,Create / reschedule appointment,Workspace,#appointment-new,"doctor, nurse, care, wellbeing, manager, admin"
+5,Cancel appointment,Workspace,#appointment-cancel,"doctor, nurse, care, wellbeing, manager, admin"
+6,Patient directory,Workspace,#patients,"doctor, nurse, care, wellbeing, manager, admin"
+7,Patient details,Patient record,#demographics,"doctor, nurse, care, wellbeing, manager, admin"
+8,Patient overview,Patient record,#patient,"doctor, nurse, care, wellbeing, manager"
+9,Clinical history,Patient record,#history,"doctor, nurse, manager"
+10,Consent & information sharing,Patient record,#consent,"doctor, nurse, care, wellbeing, manager"
+11,Record observations,Clinical workspace,#observations,"doctor, nurse"
+12,Consultation workspace,Clinical workspace,#consultation,"doctor, nurse"
+13,Consultation room,Clinical workspace,#video,"doctor, nurse, wellbeing"
+14,Consultation notes,Clinical workspace,#notes,"doctor, nurse, manager"
+15,Review & sign note,Clinical workspace,#note-review,"doctor, nurse"
+16,Addendum to signed note,Clinical workspace,#note-addendum,"doctor, nurse"
+17,Patient summary & release,Patient record,#summary,"doctor, nurse"
+18,Medication record,Patient record,#medications,"doctor, nurse, manager"
+19,Prescribing workspace,Prescribing,#prescriptions,"doctor, manager"
+20,Draft prescription,Prescribing,#rx-new,doctor
+21,Prescribing safety review,Prescribing,#rx-safety,doctor
+22,Authorise prescription preview,Prescribing,#rx-authorise,doctor
+23,Prescription status,Prescribing,#rx-status,"doctor, manager"
+24,Cancel prescription,Prescribing,#rx-cancel,doctor
+25,Tests & sample requests,Laboratory,#tests,"doctor, nurse, manager"
+26,Request clinical tests,Laboratory,#test-order,"doctor, nurse"
+27,Sample collection,Laboratory,#sample,"doctor, nurse"
+28,Laboratory tracking,Laboratory,#sample-track,"doctor, nurse, manager"
+29,Repeat sample / delay,Laboratory,#sample-repeat,"doctor, nurse, manager"
+30,Result inbox,Laboratory,#results,"doctor, nurse, manager"
+31,Review laboratory result,Laboratory,#result-detail,"doctor, nurse, manager"
+32,Release reviewed result,Laboratory,#result-release,"doctor, nurse, manager"
+33,Referrals,Clinical workspace,#referrals,"doctor, manager"
+34,Draft referral,Clinical workspace,#referral-new,doctor
+35,Referral review & sharing,Clinical workspace,#referral-review,"doctor, manager"
+36,Professional care workspace,Professional care,#care,"care, nurse, manager"
+37,Care plan,Professional care,#care-plan,"care, nurse, manager"
+38,Care visit notes,Professional care,#care-visit,"care, nurse"
+39,Wellbeing workspace,Wellbeing,#wellbeing,"wellbeing, manager"
+40,Wellbeing session record,Wellbeing,#wellbeing-session,wellbeing
+41,Shared wellbeing plan,Wellbeing,#wellbeing-plan,"wellbeing, manager"
+42,Team & patient messages,Coordination,#messages,"doctor, nurse, care, wellbeing, manager, admin"
+43,Tasks & follow-up,Coordination,#tasks,"doctor, nurse, care, wellbeing, manager, admin"
+44,Assign follow-up,Coordination,#task-new,"doctor, nurse, care, wellbeing, manager, admin"
+45,Patient documents,Patient record,#documents,"doctor, nurse, care, wellbeing, manager"
+46,Incident / safeguarding concern,Governance,#incident-new,"doctor, nurse, care, wellbeing, manager, admin"
+47,Clinical oversight,Governance,#governance,manager
+48,Audit trail,Governance,#audit,manager
+49,Team & permissions,Governance,#team,manager
+50,Payment and cover status,Operations,#payments,"admin, manager"
+51,Workspace preferences,Workspace,#settings,"doctor, nurse, care, wellbeing, manager, admin"
+52,Access restricted,System,#access-denied,"doctor, nurse, care, wellbeing, manager, admin"
+53,Patient app · Health records,Connected patient app,#patient-preview,"doctor, nurse, care, wellbeing, manager"
+54,Open connected patient app,Connected patient app,#patient-app,"doctor, nurse, care, wellbeing, manager, admin"
+55,Integration & developer handover,Design review,#integration,"doctor, nurse, care, wellbeing, manager, admin"
+56,Screen catalogue,Design review,#screens,"doctor, nurse, care, wellbeing, manager, admin"

@@ -1,0 +1,72 @@
+<div class="prototype">
+<b>LIFECOME HEALTH · PROFESSIONAL PORTAL SCREEN</b>
+<a href="/?role=doctor#incident-new">Open interactive screen</a>
+</div>
+<main class="content">
+<div class="pagehead">
+<div>
+<div class="eyebrow">WORKSPACE</div>
+<h1>Report an incident or concern</h1>
+<p class="sub">Record facts, immediate action and responsible escalation.</p>
+</div>
+<div class="actions">
+</div>
+</div>
+<div class="patientbar">
+<span class="avatar">AT</span>
+<div>
+<h2>Alex Taylor</h2>
+<small>LC-DEMO-1001 &nbsp; · &nbsp; DOB 16 April 1984 &nbsp; · &nbsp; 42 years</small>
+</div>
+<div class="tags">
+<span class="tag gray">Fictional patient</span>
+<span class="tag amber">Penicillin — reported rash</span>
+</div>
+</div>
+<section class="card">
+<header class="card-head">
+<h2>Concern record</h2>
+</header>
+<div class="card-body">
+<form data-form="incident">
+<label class="field">
+<span>Type</span>
+<select name="type" required>
+<option >Clinical incident</option>
+<option >Safeguarding concern</option>
+<option >Near miss</option>
+<option >Information-governance concern</option>
+<option >Service concern</option>
+</select>
+</label>
+<label class="field">
+<span>What happened?</span>
+<textarea name="facts" required rows="3">Record factual observations without speculation.</textarea>
+</label>
+<label class="field">
+<span>Immediate action and escalation</span>
+<textarea name="action" required rows="3">Contact the appropriate responsible professional using the agreed urgency pathway.</textarea>
+</label>
+<label class="field">
+<span>Responsible lead</span>
+<select name="owner" required>
+<option >Clinical manager</option>
+<option >Registered manager</option>
+<option >Safeguarding lead</option>
+</select>
+</label>
+<label class="check">
+<input type="checkbox" name="confirm" required>
+<span>I have taken any required immediate action; submitting this form is not an emergency response.</span>
+</label>
+<div class="footer-actions">
+<a class="btn ghost" href="#dashboard">Back</a>
+<button class="btn" type="submit">Record demo concern<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M4 12h16 m-6-6 6 6-6 6"/>
+</svg>
+</button>
+</div>
+</form>
+</div>
+</section>
+</main>
