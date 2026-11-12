@@ -8,7 +8,7 @@ export default async function InvitesPage({ searchParams }: { searchParams: Prom
   const { role } = await searchParams;
   return (
     <>
-      <PageHeader title="Invites" sub="Invite people by role. They set their own password from the link." />
+      <PageHeader title="Invites" sub="Create staff accounts by role with a default password. They choose their own password on first sign-in." />
       <InviteManager invites={listInvites()} defaultRole={role} />
     </>
   );

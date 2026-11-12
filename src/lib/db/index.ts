@@ -59,12 +59,34 @@ export function openDatabase(file = process.env.DATABASE_PATH || path.join(proce
   const database = new DatabaseSync(file);
   database.exec("PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON;");
   database.exec(SCHEMA);
+  migrate(database);
   seedSuperadmin(database);
   return database;
 }
 
+/** Additive column migrations for databases created by earlier versions. */
+function migrate(database: DatabaseSync) {
+  const has = (table: string, column: string) =>
+    (database.prepare(`PRAGMA table_info(${table})`).all() as unknown as { name: string }[]).some((c) => c.name === column);
+  if (!has("users", "must_change_password")) database.exec("ALTER TABLE users ADD COLUMN must_change_password INTEGER NOT NULL DEFAULT 0");
+  if (!has("invites", "user_id")) database.exec("ALTER TABLE invites ADD COLUMN user_id TEXT");
+  if (!has("invites", "temp_password_sealed")) database.exec("ALTER TABLE invites ADD COLUMN temp_password_sealed TEXT");
+  // Public practitioner profile shown in the patient app.
+  if (!has("users", "title")) database.exec("ALTER TABLE users ADD COLUMN title TEXT");
+  if (!has("users", "bio")) database.exec("ALTER TABLE users ADD COLUMN bio TEXT");
+  if (!has("users", "languages")) database.exec("ALTER TABLE users ADD COLUMN languages TEXT");
+  if (!has("users", "show_in_app")) database.exec("ALTER TABLE users ADD COLUMN show_in_app INTEGER NOT NULL DEFAULT 1");
+}
+
+// Module-level, so it resets when dev hot-reloads this file: an open connection then picks up new columns.
+let migratedThisModule = false;
+
 export function db(): DatabaseSync {
   globalForDb.__lifecomeDb ??= openDatabase();
+  if (!migratedThisModule) {
+    migrate(globalForDb.__lifecomeDb);
+    migratedThisModule = true;
+  }
   return globalForDb.__lifecomeDb;
 }
 

@@ -25,3 +25,13 @@ body{background:#f3f6fa}
 .lc-logo.on-dark .lc-word b:nth-child(1){color:#a2e10d}.lc-logo.on-dark .lc-word b:nth-child(2){color:#3de5f8}.lc-logo.on-dark .lc-word b:nth-child(3){color:#fff}
 .lc-logo.sm img{height:24px}.lc-logo.sm .lc-word{font-size:17px}
 .lc-logo.lg img{height:40px}.lc-logo.lg .lc-word{font-size:28px}
+.section-title{font-size:13px;font-weight:800;letter-spacing:.2px;color:var(--navy);margin:20px 0 10px}
+.team-loading,.team-empty{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:26px 16px;border:1px dashed #d7e0ec;border-radius:16px;color:var(--muted);margin-bottom:12px}
+.team-loading{flex-direction:row;justify-content:center}
+.team-empty strong{color:var(--navy);font-size:14px}
+.team-empty p{margin:0;font-size:12.5px;line-height:1.5}
+button.person-card{width:100%;border:0;background:none;text-align:left;font:inherit;cursor:pointer}
+
+a.person-card{text-decoration:none;color:inherit}
+a.person-card strong{color:var(--navy)}
+a.person-card p{color:var(--muted)}

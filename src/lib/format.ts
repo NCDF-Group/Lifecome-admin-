@@ -31,7 +31,7 @@ export const ACTION_LABELS: Record<string, string> = {
   "auth.logout": "Signed out",
   "auth.login_failed": "Failed sign-in",
   "auth.login_blocked": "Blocked sign-in (disabled)",
-  "invite.created": "Invite created",
+  "invite.created": "Account created & invited",
   "invite.resent": "Invite re-sent",
   "invite.revoked": "Invite revoked",
   "invite.accepted": "Invite accepted",
@@ -39,4 +39,6 @@ export const ACTION_LABELS: Record<string, string> = {
   "user.disabled": "Account disabled",
   "user.enabled": "Account enabled",
   "system.seed": "Super administrator created",
+  "auth.password_changed": "Password changed",
+  "user.profile_updated": "Profile updated",
 };

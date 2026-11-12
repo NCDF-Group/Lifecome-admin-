@@ -32,6 +32,13 @@ export function Sidebar({ user }: { user: { name: string; email: string } }) {
           </Link>
         ))}
       </nav>
+      <p className="c-side-label c-side-gap">Connected apps</p>
+      <nav>
+        <a href="/patient/" target="_blank" rel="noopener">
+          <Icon name="external" />
+          Patient app
+        </a>
+      </nav>
       <div className="c-side-user">
         <span className="c-avatar">{initials}</span>
         <div>

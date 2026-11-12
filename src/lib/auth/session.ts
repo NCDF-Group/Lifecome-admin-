@@ -11,6 +11,7 @@ export async function getCurrentUser(): Promise<SessionUser | null> {
 export async function requireUser(roles?: RoleKey[]): Promise<SessionUser> {
   const user = await getCurrentUser();
   if (!user) redirect("/");
+  if (user.mustChangePassword) redirect("/set-password");
   if (roles && !roles.includes(user.role)) redirect(homeFor(user.role));
   return user;
 }

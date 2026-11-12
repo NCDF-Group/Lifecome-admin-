@@ -5,9 +5,9 @@ import { acceptInvite } from "@/lib/invites";
 import { homeFor } from "@/lib/roles";
 
 export const POST = route(async (req) => {
-  const { token, name, password } = await body<{ token?: string; name?: unknown; password?: unknown }>(req);
+  const { token, currentPassword, name, newPassword } = await body<{ token?: string; currentPassword?: unknown; name?: unknown; newPassword?: unknown }>(req);
   if (typeof token !== "string" || !token) return json({ error: "This invite link is no longer valid." }, 410);
-  const { token: sessionToken, user } = acceptInvite(token, { name, password }, {
+  const { token: sessionToken, user } = acceptInvite(token, { currentPassword, name, newPassword }, {
     ip: req.headers.get("x-forwarded-for")?.split(",")[0]?.trim(),
     userAgent: req.headers.get("user-agent") ?? undefined,
   });

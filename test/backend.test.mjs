@@ -44,39 +44,83 @@ test("passwords are hashed and verifiable", () => {
   assert.ok(!security.verifyPassword("wrong", hash));
 });
 
-test("invite lifecycle: create, preview, accept once, then sign in", () => {
+test("invite creates the account with a default password and a 2-minute link", () => {
   const actor = root();
   assert.throws(() => invites.createInvite({ email: "x@example.com", role: "superadmin" }, actor), /Choose a role/);
-  const inv = invites.createInvite({ email: "Dr.Who@example.com", role: "doctor", name: "Dr Who" }, actor);
-  assert.ok(db().prepare("SELECT token_hash FROM invites WHERE id=?").get(inv.id).token_hash !== inv.token, "token stored hashed");
-  assert.equal(invites.previewInvite(inv.token).ok, true);
-  assert.throws(() => invites.acceptInvite(inv.token, { name: "Dr Who", password: "short" }), /at least 10/);
-  const { user } = invites.acceptInvite(inv.token, { name: "Dr Who", password: "Stethoscope-42" });
-  assert.equal(user.role, "doctor");
-  assert.equal(invites.previewInvite(inv.token).reason, "accepted");
-  assert.throws(() => invites.acceptInvite(inv.token, { name: "Again", password: "Stethoscope-42" }), /no longer valid/);
-  assert.equal(auth.login("dr.who@example.com", "Stethoscope-42").user.role, "doctor");
-  assert.throws(() => invites.createInvite({ email: "dr.who@example.com", role: "nurse" }, actor), /already exists/);
+  assert.throws(() => invites.createInvite({ email: "x@example.com", role: "doctor", password: "short" }, actor), /Default password/);
+  const inv = invites.createInvite({ email: "Dr.Who@example.com", role: "doctor", name: "Dr Who", password: "Default-pass-1" }, actor);
+  assert.equal(inv.defaultPassword, "Default-pass-1");
+  const ttl = inv.expiresAt - Date.now();
+  assert.ok(ttl > 110_000 && ttl <= 120_000, `ttl ${ttl}`);
+  const row = db().prepare("SELECT token_hash, temp_password_sealed FROM invites WHERE id=?").get(inv.id);
+  assert.notEqual(row.token_hash, inv.token, "token stored hashed");
+  assert.equal(row.temp_password_sealed, null, "default password is never stored in readable form");
+  assert.equal(invites.previewInvite(inv.token).invite.defaultPassword, undefined, "the link does not reveal the default");
+  // Account exists already but must change its password.
+  const signedIn = auth.login("dr.who@example.com", "Default-pass-1");
+  assert.equal(signedIn.user.mustChangePassword, true);
+  assert.equal(auth.userForToken(signedIn.token).mustChangePassword, true);
+  assert.throws(() => invites.createInvite({ email: "dr.who@example.com", role: "nurse" }, actor), /already been invited/);
 });
 
-test("revoked, superseded and expired invites cannot be used", () => {
+test("two-step invite: verify the default password, then set a new one (once)", () => {
+  const actor = root();
+  const inv = invites.createInvite({ email: "nurse.a@example.com", role: "nurse", name: "Nurse A" }, actor);
+  assert.match(inv.defaultPassword, /^[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}$/, "generated when blank");
+  // Step 1
+  assert.throws(() => invites.verifyInvite(inv.token, "wrong-pass-1"), /isn’t right/);
+  assert.equal(invites.verifyInvite(inv.token, inv.defaultPassword).ok, true);
+  // Step 2 re-checks the default password
+  assert.throws(() => invites.acceptInvite(inv.token, { currentPassword: "wrong-pass-1", name: "Nurse A", newPassword: "Stethoscope-42" }), /isn’t right/);
+  assert.throws(() => invites.acceptInvite(inv.token, { currentPassword: inv.defaultPassword, name: "Nurse A", newPassword: inv.defaultPassword }), /not the default/);
+  assert.throws(() => invites.acceptInvite(inv.token, { currentPassword: inv.defaultPassword, name: "Nurse A", newPassword: "short" }), /at least 10/);
+  const { user } = invites.acceptInvite(inv.token, { currentPassword: inv.defaultPassword, name: "Nurse A", newPassword: "Stethoscope-42" });
+  assert.equal(user.role, "nurse");
+  assert.equal(invites.previewInvite(inv.token).reason, "accepted");
+  assert.throws(() => invites.verifyInvite(inv.token, "Stethoscope-42"), /expired/);
+  assert.throws(() => auth.login("nurse.a@example.com", inv.defaultPassword), /Incorrect/);
+  assert.equal(auth.login("nurse.a@example.com", "Stethoscope-42").user.mustChangePassword, false);
+});
+
+test("after the link expires, sign in with the default password and change it", () => {
+  const actor = root();
+  const inv = invites.createInvite({ email: "late@example.com", role: "wellbeing", name: "Late Person" }, actor);
+  db().prepare("UPDATE invites SET expires_at = 1 WHERE id = ?").run(inv.id);
+  assert.equal(invites.previewInvite(inv.token).reason, "expired");
+  assert.equal(db().prepare("SELECT temp_password_sealed s FROM invites WHERE id=?").get(inv.id).s, null, "sealed password wiped on expiry");
+  assert.throws(() => invites.acceptInvite(inv.token, { currentPassword: inv.defaultPassword, name: "Late", newPassword: "Whatever-pass-9" }), /expired/);
+  const { token, user } = auth.login("late@example.com", inv.defaultPassword);
+  assert.equal(user.mustChangePassword, true);
+  assert.throws(() => auth.changePassword(user.id, "wrong-pass-1", "Brand-new-pass-1"), /current password/);
+  assert.throws(() => auth.changePassword(user.id, inv.defaultPassword, inv.defaultPassword), /different/);
+  auth.changePassword(user.id, inv.defaultPassword, "Brand-new-pass-1", token);
+  invites.completeInvitesFor(user.id);
+  assert.equal(auth.userForToken(token).mustChangePassword, false);
+  assert.equal(invites.listInvites().find((i) => i.id === inv.id).activated, 1);
+});
+
+test("revoke removes a never-activated account; new link keeps the default password", () => {
   const actor = root();
   const a = invites.createInvite({ email: "n1@example.com", role: "nurse" }, actor);
   invites.revokeInvite(a.id, actor);
   assert.equal(invites.previewInvite(a.token).reason, "revoked");
+  assert.equal(db().prepare("SELECT COUNT(*) n FROM users WHERE email='n1@example.com'").get().n, 0);
   const b = invites.createInvite({ email: "n2@example.com", role: "nurse" }, actor);
   const c = invites.reissueInvite(b.id, actor);
   assert.equal(invites.previewInvite(b.token).ok, false);
   assert.equal(invites.previewInvite(c.token).ok, true);
-  db().prepare("UPDATE invites SET expires_at = 1 WHERE id = ?").run(c.id);
-  assert.equal(invites.previewInvite(c.token).reason, "expired");
+  assert.equal(invites.verifyInvite(c.token, b.defaultPassword).ok, true, "same default password still works");
+  const d = invites.reissueInvite(c.id, actor, "Changed-pass-5");
+  assert.throws(() => auth.login("n2@example.com", b.defaultPassword), /Incorrect/);
+  assert.equal(auth.login("n2@example.com", "Changed-pass-5").user.mustChangePassword, true);
+  assert.equal(invites.previewInvite(d.token).ok, true);
   assert.equal(invites.previewInvite("garbage").reason, "invalid");
 });
 
 test("disabling a user ends their access; roles can be changed", () => {
   const actor = root();
   const inv = invites.createInvite({ email: "care@example.com", role: "care" }, actor);
-  const { user, token } = invites.acceptInvite(inv.token, { name: "Care Person", password: "Careful-pass-7" });
+  const { user, token } = invites.acceptInvite(inv.token, { currentPassword: inv.defaultPassword, name: "Care Person", newPassword: "Careful-pass-7" });
   users.updateUser(user.id, { role: "manager" }, actor);
   assert.equal(auth.userForToken(token).role, "manager");
   users.updateUser(user.id, { status: "disabled" }, actor);
@@ -85,10 +129,40 @@ test("disabling a user ends their access; roles can be changed", () => {
   assert.throws(() => users.updateUser(actor.id, { status: "disabled" }, actor), /your own/);
 });
 
+test("practitioners appear in the patient app only once activated, visible and patient-facing", () => {
+  const actor = root();
+  const inv = invites.createInvite({ email: "gp.one@example.com", role: "doctor", name: "Dr Ada Obi" }, actor);
+  const list = () => users.listPractitioners();
+  assert.equal(list().find((p) => p.name === "Dr Ada Obi"), undefined, "hidden until they set their own password");
+  const { user } = invites.acceptInvite(inv.token, { currentPassword: inv.defaultPassword, name: "Dr Ada Obi", newPassword: "Stethoscope-77" });
+  const p = list().find((x) => x.id === user.id);
+  assert.ok(p, "visible after activation");
+  assert.equal(p.role, "doctor");
+  assert.equal(p.initials, "AO", "titles like Dr are skipped in initials");
+  assert.equal(p.title, "Doctor / prescriber", "falls back to the role label");
+  assert.equal("email" in p, false, "no emails in public data");
+
+  users.updateUser(user.id, { title: "GP · online and in-clinic", languages: "English, Igbo", bio: "Family medicine." }, actor);
+  const updated = list().find((x) => x.id === user.id);
+  assert.equal(updated.title, "GP · online and in-clinic");
+  assert.equal(updated.languages, "English, Igbo");
+  assert.throws(() => users.updateUser(user.id, { bio: "x".repeat(601) }, actor), /600/);
+  assert.throws(() => users.updateUser(user.id, { name: " " }, actor), /full name/);
+
+  users.updateUser(user.id, { showInApp: false }, actor);
+  assert.equal(list().find((x) => x.id === user.id), undefined, "admin can hide someone");
+  users.updateUser(user.id, { showInApp: true }, actor);
+  users.updateUser(user.id, { role: "wellbeing" }, actor);
+  assert.equal(list().find((x) => x.id === user.id).role, "wellbeing", "role changes flow through");
+  users.updateUser(user.id, { status: "disabled" }, actor);
+  assert.equal(list().find((x) => x.id === user.id), undefined, "disabled staff disappear");
+  assert.equal(list().some((x) => x.role === "superadmin"), false, "super admin never listed");
+});
+
 test("analytics reflect real activity", () => {
   const o = analytics.overview(14);
-  assert.ok(o.totals.total >= 3);
-  assert.ok(o.invites.sent >= 4 && o.invites.accepted >= 2);
+  assert.ok(o.totals.total >= 4);
+  assert.ok(o.invites.sent >= 5 && o.invites.accepted >= 3);
   assert.equal(o.logins.length, 14);
   assert.ok(o.logins.reduce((s, p) => s + p.value, 0) >= 3);
   assert.equal(o.roles.find((r) => r.role === "superadmin").members, 1);

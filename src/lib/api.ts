@@ -32,6 +32,7 @@ export function userFromRequest(req: NextRequest): SessionUser | null {
 export function requireApiUser(req: NextRequest, roles?: RoleKey[]): SessionUser {
   const user = userFromRequest(req);
   if (!user) throw new AuthError("Sign in to continue.", 401);
+  if (user.mustChangePassword) throw new AuthError("Set a new password before continuing.", 403);
   if (roles && !roles.includes(user.role)) throw new AuthError("You don’t have access to this.", 403);
   return user;
 }

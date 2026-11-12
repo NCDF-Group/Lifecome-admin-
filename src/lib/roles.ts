@@ -23,6 +23,9 @@ export const ROLES: readonly RoleInfo[] = [
 export const ROLE_KEYS = ROLES.map((r) => r.key) as RoleKey[];
 export const INVITABLE_ROLES = ROLES.filter((r) => r.invitable);
 
+/** Roles whose members are listed for patients in the patient app. */
+export const PATIENT_FACING_ROLES: RoleKey[] = ["doctor", "nurse", "care", "wellbeing", "manager", "admin"];
+
 export function isRole(value: unknown): value is RoleKey {
   return typeof value === "string" && (ROLE_KEYS as string[]).includes(value);
 }
@@ -33,4 +36,9 @@ export function roleInfo(key: string): RoleInfo {
 
 export function homeFor(role: RoleKey): string {
   return role === "superadmin" ? "/admin" : "/portal";
+}
+
+/** Where a signed-in user should land: the password step first if they still have a default password. */
+export function landingFor(user: { role: RoleKey; mustChangePassword: boolean }): string {
+  return user.mustChangePassword ? "/set-password" : homeFor(user.role);
 }

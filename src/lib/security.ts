@@ -59,3 +59,13 @@ export function throttle(key: string, max: number, windowMs: number): { allowed:
 export function clearThrottle(key: string) {
   attempts.delete(key);
 }
+
+/** A readable default password that satisfies the password policy, e.g. "Kq7m-x4Pr-W9tz". */
+export function generatePassword(): string {
+  const alphabet = "abcdefghjkmnpqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ23456789";
+  const bytes = randomBytes(12);
+  const chars = Array.from(bytes, (b) => alphabet[b % alphabet.length]);
+  chars[1] = String(2 + (bytes[1] % 8)); // guarantee a digit
+  chars[0] = "ABCDEFGHJKMNPQRSTUVWXYZ"[bytes[0] % 23]; // and a letter
+  return `${chars.slice(0, 4).join("")}-${chars.slice(4, 8).join("")}-${chars.slice(8).join("")}`;
+}

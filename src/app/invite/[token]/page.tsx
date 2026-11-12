@@ -10,9 +10,9 @@ export const dynamic = "force-dynamic";
 
 const MESSAGES = {
   invalid: "This invite link isn’t valid. Check you copied the whole link, or ask for a new one.",
-  expired: "This invite has expired. Ask your administrator to send you a new one.",
+  expired: "This invite link has expired. Sign in with your email and the default password your administrator gave you — you’ll then choose a new one.",
   revoked: "This invite was withdrawn. Ask your administrator to send you a new one.",
-  accepted: "This invite has already been used. Sign in with the account you created.",
+  accepted: "This invite has already been used. Sign in with your email and password.",
 } as const;
 
 export default async function InvitePage({ params }: { params: Promise<{ token: string }> }) {
@@ -29,7 +29,7 @@ export default async function InvitePage({ params }: { params: Promise<{ token: 
   return (
     <AuthShell
       title="Join LifeCome Health"
-      sub={`${invite.invitedBy ? invite.invitedBy + " invited you" : "You’ve been invited"} as ${roleInfo(invite.role).label}. Set up your account to continue.`}
+      sub={`${invite.invitedBy ? invite.invitedBy + " invited you" : "You’ve been invited"} as ${roleInfo(invite.role).label}. Confirm your default password, then choose your own.`}
     >
       <AcceptInviteForm token={token} email={invite.email} defaultName={invite.name ?? ""} />
     </AuthShell>

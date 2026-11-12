@@ -17,19 +17,23 @@ npm test && npm run lint && npm run typecheck
 ## How access works
 
 1. The first page (`/`) is **sign in**. There is no public sign-up.
-2. A **super administrator** is seeded into the database on first start from `SEED_SUPERADMIN_EMAIL` / `SEED_SUPERADMIN_PASSWORD` (if the password is blank, a random one is generated and printed once in the server log).
-3. The super administrator opens **/admin** to create an **invite** for any role (doctor, nurse, care professional, wellbeing practitioner, clinical manager, reception/operations). Invites are single-use, expire after 7 days, and can be revoked or re-issued.
-4. The invitee opens `/invite/<token>`, sets their name and password, and lands in the professional portal for their role.
-5. The console has a dashboard per role, team management (change role, disable), analytics and an audit log.
+2. A **super administrator** is seeded into the database on first start from `SEED_SUPERADMIN_EMAIL` / `SEED_SUPERADMIN_PASSWORD` (if the password is blank, a random one is printed once in the server log).
+3. In **/admin/invites** the super administrator adds a team member: email, name, **role** and a **default password** (typed or generated with one click). The account is created immediately.
+4. An **invite link** is issued that **expires after 2 minutes** (`INVITE_TTL_SECONDS` to change). The admin sends the link and the default password to the person.
+5. Signing in is a **two-step flow** for invitees: **1 · Verify** — enter the default password; **2 · New password** — choose their own (and confirm their name). Then they land in their role's workspace.
+6. If the link has expired, they sign in at `/` with their email and default password and the same step 2 appears before anything else is reachable.
+6a. “New link” issues a fresh 2-minute link (same default password); “Revoke” removes an account that was never activated.
+7. The console also has a dashboard per role, team management (change role, disable), analytics and an audit log.
 
-If `RESEND_API_KEY` and `MAIL_FROM` are set, invites are emailed; otherwise the link is shown to copy and share.
+The default password is only ever stored as a hash and is never shown on the invite page. If `RESEND_API_KEY` and `MAIL_FROM` are set, the link is emailed; share the default password separately.
 
 ## Routes
 
 | Path | Who |
 | --- | --- |
 | `/` | Sign in |
-| `/invite/[token]` | Accept an invite |
+| `/invite/[token]` | Accept an invite (2-minute link) |
+| `/set-password` | Forced password change after signing in with a default password |
 | `/admin` · `/admin/roles[/role]` · `/admin/team` · `/admin/invites` · `/admin/analytics` · `/admin/audit` | Super administrator |
 | `/portal` | Professional portal (role from the account; super administrators preview a role with `?as=`) |
 | `/patient/`, `/patient-app` | Patient app and released-records view |

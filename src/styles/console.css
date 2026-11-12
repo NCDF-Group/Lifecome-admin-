@@ -184,3 +184,41 @@
 .c-callout strong{color:#2b6b00;font-size:13.5px}
 .c-callout p{margin:3px 0 8px;font-size:12.5px;color:#4b6b35}
 .c-callout code{display:block;font-size:12px;background:#fff;border:1px solid #d6e8c4;border-radius:8px;padding:8px 10px;word-break:break-all;color:#27425a}
+.c-form-grid.three{grid-template-columns:1fr 1fr}.c-form-grid.three>label:last-child{grid-column:1/-1;max-width:520px}
+@media(max-width:1000px){.c-form-grid.three{grid-template-columns:1fr}}
+.c-input-group{display:flex;gap:6px;align-items:center}
+.c-input-group .c-input{flex:1;min-width:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.c-callout-main{flex:1;min-width:0}
+
+
+
+@media(max-width:700px){}
+
+
+
+
+
+
+
+.a-form-field{display:flex;flex-direction:column;gap:7px}.a-label{font-size:12px;font-weight:700;color:#35516a}.a-hint{font-size:11.5px;color:var(--c-muted);line-height:1.5}
+.a-steps{list-style:none;display:flex;gap:8px;padding:0;margin:0 0 22px}
+.a-steps li{flex:1;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:#8396a7;padding-bottom:10px;border-bottom:3px solid #e3eaf1}
+.a-steps li span{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:11px;background:#eef3f8;color:#5b7083;flex:none}
+.a-steps li.current{color:var(--c-ink);border-color:var(--c-blue)}
+.a-steps li.current span{background:var(--c-blue);color:#fff}
+.a-steps li.done{color:#3a8a00;border-color:#45af03}
+.a-steps li.done span{background:#e7f5dc;color:#3a8a00}
+.a-back{border:0;background:none;color:var(--c-muted);font-size:12.5px;font-weight:700;cursor:pointer;padding:4px;align-self:center}
+.a-back:hover{color:var(--c-ink)}
+.c-side-gap{margin-top:24px}
+.c-app{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:#7b8fa1;font-weight:600;white-space:nowrap}
+.c-app i{width:7px;height:7px;border-radius:50%;background:#c3cfda}
+.c-app.on{color:#3a8a00}.c-app.on i{background:#45af03}
+.c-edit-row td{background:#f8fbfd}
+.c-profile-form{display:flex;flex-direction:column;gap:14px;padding:6px 0}
+.c-profile-form label>span{display:block;font-size:12px;font-weight:700;color:#35516a;margin-bottom:6px}
+.c-profile-form .c-form-grid{margin:0}
+.c-check{display:flex;align-items:center;gap:10px;align-self:end;padding-bottom:10px}
+.c-check span{margin:0 !important}
+.c-block{display:block}
+.c-profile-form textarea{resize:vertical;min-height:80px;font-family:inherit}

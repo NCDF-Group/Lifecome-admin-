@@ -17,7 +17,7 @@ export const viewport: Viewport = { themeColor: "#102c3c" };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${manrope.variable} ${dmSans.variable}`}>
-      <body>
+      <body suppressHydrationWarning>
         {children}
         <Script src="/runtime-config.js" strategy="beforeInteractive" />
       </body>
